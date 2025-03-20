@@ -4,7 +4,7 @@
 
 ### 学习产出笔记：
 
-[Git极简版知识点](Geek组 春招考核笔记\Git极简版知识点.md)
+[Git极简版知识点](https://github.com/rgfdhkh/Tasks/blob/main/Git%E6%9E%81%E7%AE%80%E7%89%88%E7%9F%A5%E8%AF%86%E7%82%B9.md)
 
 [Git与GitHub](Geek组 春招考核笔记\Git与GitHub.md)
 
