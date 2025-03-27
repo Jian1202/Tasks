@@ -1,4 +1,3 @@
-/* style.css */
 /* 学术风配色 */
 /* 定义根元素的自定义属性，用于存储颜色值，方便后续使用 */
 :root {
@@ -186,6 +185,8 @@ body {
     margin-bottom: 1rem;
     /* 设置底部的边框线条为 1px 宽，灰色 */
     border-top: 1px solid #ccc;
+    /* 设置底部的文本居中 */
+    text-align: center;
 }
 
 /* 响应式优化，当屏幕宽度小于等于 768px 时应用以下样式 */
