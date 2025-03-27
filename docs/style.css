@@ -55,7 +55,7 @@ body {
 }
 
 /* 导航栏 logo 年份样式 */
-.logo-year {
+.logo-year ,.node-year {
     /* 使用金箔色作为文本颜色 */
     color: var(--gold-leaf);
     /* 启用数字的表格对齐特性，使数字排版更整齐 */
@@ -166,17 +166,26 @@ body {
     transform: translateY(-5px);
 }
 
-/* 书籍类兴趣卡片样式，在卡片顶部添加 3px 宽的蓝色边框 */
-.book { border-top: 3px solid #4B9CD3; }
+/* 书籍类兴趣卡片样式，在卡片顶部添加 3px 宽的红色边框 */
+.book { border-top: 3px solid #F08080; }
 /* 代码类兴趣卡片样式，在卡片顶部添加 3px 宽的绿色边框 */
 .code { border-top: 3px solid #67C23A; }
+/* 代码类兴趣卡片样式，在卡片顶部添加 3px 宽的蓝色边框 */
+.movie { border-top: 3px solid #4B9CD3; }
 
-/* 高亮文本样式 */
-.highlight {
-    /* 使用金箔色作为文本颜色 */
-    color: var(--gold-leaf);
-    /* 设置字体加粗 */
-    font-weight: 600;
+.footer {
+    /* 使用墨黑色作为文本颜色 */
+    color: var(--ink-black);
+    /* 设置字体大小为 0.8rem */
+    font-size: 0.8rem;
+    /* 设置字母间距为 0.1rem，使文本更紧凑 */
+    letter-spacing: 0.1rem;
+    /* 设置底部的内边距为 1rem */
+    padding: 1rem;
+    /* 设置底部的底部外边距为 1rem */
+    margin-bottom: 1rem;
+    /* 设置底部的边框线条为 1px 宽，灰色 */
+    border-top: 1px solid #ccc;
 }
 
 /* 响应式优化，当屏幕宽度小于等于 768px 时应用以下样式 */
