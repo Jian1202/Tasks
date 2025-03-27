@@ -1,54 +1,123 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <!-- 设置字符编码为UTF-8 -->
     <meta charset="UTF-8">
-    <!-- 设置页面在不同设备上的显示效果 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 设置页面标题 -->
-    <title>CodeRookie | 前端新兵</title>
-    <!-- 引入外部样式表 -->
+    <title>Student Log | Jian</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
-    <!-- 用于显示粒子背景的容器 -->
-    <div id="particles-js"></div>
-
-    <!-- 导航栏 -->
-    <nav class="cyber-nav">
-        <!-- 导航栏标题 -->
-        <h1>＞_ Terminal://CodeRookie/v1.0</h1>
+    <!-- 学术导航 -->
+    <nav class="academic-nav">
+        <div class="nav-logo">
+            <span class="logo-text">STUDENT LOG</span>
+            <span class="logo-year">2024 - 2025</span>
+        </div>
     </nav>
 
-    <!-- 主视觉区域 -->
-    <section class="matrix-hero">
-        <!-- 用于显示代码雨效果的容器 -->
-        <div class="code-rain" id="codeRain"></div>
-        <!-- 居中容器 -->
-        <div class="container text-center">
-            <!-- 代码框 -->
-            <div class="code-box cyber-glow">
-                <!-- 代码框内的标题 -->
-                <h1>const rookie = new FrontEndDeveloper();</h1>
-                <!-- 代码框内的提示信息 -->
-                <p>while(!succeed) { keepCoding(); }</p>
-                <!-- 按钮 -->
-                <button class="cyber-button">Initiate Learning</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- 主内容区域 -->
+    <!-- 主内容区 -->
     <main class="container">
-        <!-- 时间轴区域 -->
+        <!-- 身份卡 -->
+        <section class="id-card">
+            <div class="card-header">
+                <h1>Coder<span class="accent">_</span>Jian</h1>
+                <p class="subtitle">计算机科学技术 | 大一</p>
+            </div>
+            <div class="card-body">
+                    <p>性别：男</p>
+                    <p>出生日期：2000.09.01</p>
+                    <p>电子邮箱：<EMAIL></p>
+                    <p>GitHub：https://github.com/CoderJian</p>
+
+                <div class="motto">
+                    <span class="quote-mark"></span>
+                    <p>while( interest ) { keep_Curiosity(); }</p>
+                    <p>while( !succeed ) { keep_Learning(); }</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技能时间轴 -->
         <section class="timeline">
-            <!-- 时间轴内容保持不变 -->
+            <div class="timeline-node past">
+                <div class="node-header">
+                    <span class="node-year"><b>大一上</b></span>
+                    <h2>基本掌握技能</h2>
+                </div>
+                <ul class="skill-list">
+                    <li>
+                        <span class="skill-name">Markdown</span>
+                        <div class="skill-bar" style="--progress: 90%"></div>
+                    </li>
+                    <p><b>90%…</b></p>
+                    <li>
+                        <span class="skill-name">C语言</span>
+                        <div class="skill-bar" style="--progress: 80%"></div>
+                    </li>
+                    <p><b>80%…</b></p>
+                    <li>
+                        <span class="skill-name">HTML5</span>
+                        <div class="skill-bar" style="--progress: 85%"></div>
+                    </li>
+                    <p><b>85%…</b></p>
+                    <li>
+                        <span class="skill-name">CSS3</span>
+                        <div class="skill-bar" style="--progress: 75%"></div>
+                    </li>
+                    <p><b>75%…</b></p>
+                </ul>
+            </div>
+
+            <div class="timeline-node now">
+                <div class="node-header">
+                    <span class="node-year"><b>大一下</b></span>
+                    <h2>学习中……</h2></h2>
+                </div>
+                <ul class="skill-list">
+                    <li>
+                        <span class="skill-name">C++</span>
+                        <div class="skill-bar" style="--progress: 40%"></div>
+                    </li>
+                    <p><b>40%……</b></p>
+                    <li>
+                        <span class="skill-name">JavaScript</span>
+                        <div class="skill-bar" style="--progress: 35%"></div>
+                    </li>
+                    <p><b>35%……</b></p>
+                    <li>
+                        <span class="skill-name">Python</span>
+                        <div class="skill-bar" style="--progress: 30%"></div>
+                    </li>
+                    <p><b>30%……</b></p>
+                </ul>
+            </div>
+
+            <div class="timeline-node future">
+                <div class="node-header"></div>
+            </div>
+        </section>
+
+        <!-- 兴趣矩阵 -->
+        <section class="interest-grid">
+            <div class="interest-card book">
+                <h3>技术阅读</h3>
+                <p>《C++程序设计语言》</p>
+                <p>《数据结构与算法分析》</p>
+                <p>《计算机科学概论》</p>
+            </div>
+            
+            <div class="interest-card movie">
+                <h3>电影观影</h3>
+                <p>《盗梦空间》</p>
+                <p>《复仇者联盟4》</p>
+                <p>《蝙蝠侠：黑暗骑士崛起》</p>
+            </div>
+            <div class="interest-card code">
+                <h3>代码实践</h3>
+                <p>技术学习日志网页实现<br></p>
+            </div>
         </section>
     </main>
-
-    <!-- 引入粒子效果的JS库 -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <!-- 引入自定义的交互逻辑代码 -->
-    <script src="script.js"></script>
 </body>
 </html>

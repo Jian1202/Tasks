@@ -1,161 +1,195 @@
-/* ==== 赛博朋克风格变量 ==== */
+/* style.css */
+/* 学术风配色 */
+/* 定义根元素的自定义属性，用于存储颜色值，方便后续使用 */
 :root {
-    /* 定义霓虹蓝色 */
-    --neon-blue: #00f3ff;
-    /* 定义霓虹粉色 */
-    --neon-pink: #ff00ff;
-    /* 定义赛博黄色 */
-    --cyber-yellow: #fff500;
-    /* 定义矩阵绿色 */
-    --matrix-green: #0aff0a;
-    /* 定义背景深色 */
-    --bg-dark: #0a0a12;
-    /* 定义终端边框样式 */
-    --terminal-border: 2px solid var(--neon-blue);
+    /* 定义牛津蓝颜色变量，用于背景、标题等，营造学术氛围 */
+    --oxford-blue: #002147;
+    /* 定义金箔色变量，用于强调部分，如进度条、特定文本 */
+    --gold-leaf: #C5A059;
+    /* 定义羊皮纸色变量，作为页面背景色，给人柔和、学术的感觉 */
+    --parchment: #F5F5F0;
+    /* 定义墨黑色变量，作为页面的主要文本颜色 */
+    --ink-black: #333333;
 }
 
-/* ==== 基础重置 ==== */
-* {
-    /* 去除所有元素的外边距 */
-    margin: 0;
-    /* 去除所有元素的内边距 */
-    padding: 0;
-    /* 设置盒模型为边框盒模型 */
-    box-sizing: border-box;
-    /* 设置字体为Courier New或等宽字体 */
-    font-family: 'Courier New', monospace;
-}
-
+/* 设置页面主体的样式 */
 body {
-    /* 设置背景颜色为深色 */
-    background: var(--bg-dark);
-    /* 设置文字颜色为霓虹蓝色 */
-    color: var(--neon-blue);
-    /* 设置行高为1.6 */
-    line-height: 1.6;
-    /* 隐藏水平滚动条 */
-    overflow-x: hidden;
+    /* 使用羊皮纸色作为背景颜色 */
+    background: var(--parchment);
+    /* 使用墨黑色作为文本颜色 */
+    color: var(--ink-black);
+    /* 设置字体，优先使用 'Helvetica Neue'，如果不可用则使用 'Noto Sans SC'，最后使用通用的 sans-serif 字体 */
+    font-family: 'Helvetica Neue', 'Noto Sans SC', sans-serif;
+    /* 设置行高为 1.8，使文本更易读 */
+    line-height: 1.8;
 }
 
-/* ==== 粒子背景 ==== */
-#particles-js {
-    /* 设置为固定定位 */
-    position: fixed;
-    /* 宽度为100% */
-    width: 100%;
-    /* 高度为100% */
-    height: 100%;
-    /* 设置层级为-1，使其在底层 */
-    z-index: -1;
+/* 导航栏样式 */
+.academic-nav {
+    /* 使用牛津蓝作为导航栏的背景颜色 */
+    background: var(--oxford-blue);
+    /* 设置导航栏的内边距，上下为 1rem，左右为 2rem */
+    padding: 1rem 2rem;
+    /* 添加阴影效果，使导航栏有立体感 */
+    box-shadow: 0 2px 10px rgba(0,33,71,0.1);
 }
 
-/* ==== 导航栏 ==== */
-.cyber-nav {
-    /* 设置导航栏背景颜色及透明度 */
-    background: rgba(10,10,18,0.95);
-    /* 设置背景模糊效果 */
-    backdrop-filter: blur(5px);
-    /* 设置底部边框样式 */
-    border-bottom: var(--terminal-border);
-    /* 设置内边距 */
-    padding: 1rem;
-    /* 设置为固定定位 */
-    position: fixed;
-    /* 宽度为100% */
-    width: 100%;
-    /* 距离顶部为0 */
-    top: 0;
-    /* 设置层级为1000，使其在顶部 */
-    z-index: 1000;
-}
-
-.cyber-nav h1 {
-    /* 设置文字阴影 */
-    text-shadow: 0 0 10px var(--neon-blue);
-    /* 应用glitch动画，持续时间为1秒，无限循环 */
-    animation: glitch 1s infinite;
-}
-
-/* ==== 主视觉区 ==== */
-.matrix-hero {
-    /* 设置高度为视口高度 */
-    height: 100vh;
-    /* 使用flex布局，垂直居中 */
+/* 导航栏 logo 容器样式 */
+.nav-logo {
+    /* 使用 flex 布局，使子元素水平排列 */
     display: flex;
-    /* 垂直居中 */
-    align-items: center;
-    /* 水平居中 */
-    justify-content: center;
-    /* 设置为相对定位 */
-    position: relative;
-    /* 隐藏溢出内容 */
-    overflow: hidden;
+    /* 使子元素在交叉轴上与基线对齐 */
+    align-items: baseline;
+    /* 设置子元素之间的间距为 0.75rem */
+    gap: 0.75rem;
 }
 
-.code-rain {
-    /* 设置为绝对定位 */
-    position: absolute;
-    /* 设置文字颜色为矩阵绿色 */
-    color: var(--matrix-green);
-    /* 设置透明度为0.3 */
-    opacity: 0.3;
-    /* 设置层级为-1，使其在底层 */
-    z-index: -1;
+/* 导航栏 logo 文本样式 */
+.logo-text {
+    /* 使用羊皮纸色作为文本颜色 */
+    color: var(--parchment);
+    /* 设置字体大小为 1.5rem */
+    font-size: 1.5rem;
+    /* 设置字母间距为 1px，使文本更舒展 */
+    letter-spacing: 1px;
 }
 
-/* ==== 时间轴 ==== */
-.timeline {
-    /* 设置为相对定位 */
-    position: relative;
-    /* 设置最大宽度为800px */
-    max-width: 800px;
-    /* 上下外边距为2rem，左右居中 */
-    margin: 2rem auto;
+/* 导航栏 logo 年份样式 */
+.logo-year {
+    /* 使用金箔色作为文本颜色 */
+    color: var(--gold-leaf);
+    /* 启用数字的表格对齐特性，使数字排版更整齐 */
+    font-feature-settings: "tnum";
 }
 
-.timeline-item {
-    /* 设置背景颜色及透明度 */
-    background: rgba(0,243,255,0.1);
-    /* 设置边框样式 */
-    border: var(--terminal-border);
-    /* 设置内边距 */
-    padding: 1.5rem;
-    /* 上下外边距为2rem */
+/* 身份卡样式 */
+.id-card {
+    /* 使用白色作为背景颜色 */
+    background: white;
+    /* 设置圆角半径为 8px，使卡片边角更圆润 */
+    border-radius: 8px;
+    /* 设置卡片的内边距为 2rem */
+    padding: 2rem;
+    /* 设置卡片的上下外边距为 2rem，左右外边距为 0 */
     margin: 2rem 0;
-    /* 设置为相对定位 */
+    /* 添加阴影效果，使卡片有立体感 */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    /* 在卡片左侧添加 4px 宽的金箔色边框，起到强调作用 */
+    border-left: 4px solid var(--gold-leaf);
+}
+
+/* 身份卡头部标题样式 */
+.card-header h1 {
+    /* 设置字体大小为 2.5rem */
+    font-size: 2.5rem;
+    /* 使用牛津蓝作为文本颜色 */
+    color: var(--oxford-blue);
+    /* 设置标题的下外边距为 0.5rem */
+    margin-bottom: 0.5rem;
+}
+
+/* 强调文本样式 */
+.accent {
+    /* 使用金箔色作为文本颜色 */
+    color: var(--gold-leaf);
+}
+
+/* 副标题样式 */
+.subtitle {
+    /* 使用牛津蓝作为文本颜色 */
+    color: var(--oxford-blue);
+    /* 设置文本透明度为 0.8，使副标题颜色稍淡 */
+    opacity: 0.8;
+}
+
+/* 技能进度条样式 */
+.skill-bar {
+    /* 设置进度条的高度为 8px */
+    height: 8px;
+    /* 使用浅灰色作为进度条的背景颜色 */
+    background: #eee;
+    /* 设置圆角半径为 4px，使进度条边角更圆润 */
+    border-radius: 4px;
+    /* 设置进度条的上下外边距为 0.5rem，左右外边距为 0 */
+    margin: 0.5rem 0;
+    /* 设置为相对定位，为伪元素的绝对定位提供参考 */
     position: relative;
-    /* 设置边框圆角 */
-    border-radius: 5px;
-    /* 设置过渡效果，持续时间为0.3秒 */
-    transition: 0.3s;
 }
 
-/* ==== 动画定义 ==== */
-@keyframes glitch {
-    /* 动画开始时的状态 */
-    0% { text-shadow: 2px 2px var(--neon-pink); }
-    /* 动画进行到50%时的状态 */
-    50% { text-shadow: -2px -2px var(--cyber-yellow); }
-    /* 动画结束时的状态 */
-    100% { text-shadow: 2px 2px var(--neon-pink); }
+/* 技能进度条的伪元素，用于显示进度 */
+.skill-bar::after {
+    /* 伪元素的内容为空 */
+    content: '';
+    /* 设置为绝对定位，相对于父元素 .skill-bar 定位 */
+    position: absolute;
+    /* 距离父元素左侧为 0 */
+    left: 0;
+    /* 距离父元素顶部为 0 */
+    top: 0;
+    /* 高度与父元素相同 */
+    height: 100%;
+    /* 宽度由自定义属性 --progress 控制，用于显示进度 */
+    width: var(--progress);
+    /* 使用金箔色作为进度条的颜色 */
+    background: var(--gold-leaf);
+    /* 设置圆角半径为 4px，使进度条边角更圆润 */
+    border-radius: 4px;
+    /* 添加过渡效果，使进度条宽度变化更平滑，过渡时间为 0.5s，过渡方式为 ease */
+    transition: width 0.5s ease;
 }
 
-@keyframes pulse {
-    /* 动画开始和结束时的状态 */
-    0%, 100% { opacity: 0.8; }
-    /* 动画进行到50%时的状态 */
-    50% { opacity: 1; }
+/* 兴趣网格样式 */
+.interest-grid {
+    /* 使用网格布局 */
+    display: grid;
+    /* 设置网格项之间的间距为 1.5rem */
+    gap: 1.5rem;
+    /* 设置网格列的布局方式，自动适应宽度，最小宽度为 250px，最大宽度为 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-/* ==== 响应式设计 ==== */
+/* 兴趣卡片样式 */
+.interest-card {
+    /* 设置卡片的内边距为 1.5rem */
+    padding: 1.5rem;
+    /* 设置圆角半径为 6px，使卡片边角更圆润 */
+    border-radius: 6px;
+    /* 使用白色作为背景颜色 */
+    background: white;
+    /* 添加过渡效果，使卡片在鼠标悬停时的变换更平滑，过渡时间为 0.3s，过渡方式为 ease */
+    transition: transform 0.3s ease;
+}
+
+/* 兴趣卡片鼠标悬停样式 */
+.interest-card:hover {
+    /* 鼠标悬停时，卡片向上移动 5px，产生动态效果 */
+    transform: translateY(-5px);
+}
+
+/* 书籍类兴趣卡片样式，在卡片顶部添加 3px 宽的蓝色边框 */
+.book { border-top: 3px solid #4B9CD3; }
+/* 代码类兴趣卡片样式，在卡片顶部添加 3px 宽的绿色边框 */
+.code { border-top: 3px solid #67C23A; }
+
+/* 高亮文本样式 */
+.highlight {
+    /* 使用金箔色作为文本颜色 */
+    color: var(--gold-leaf);
+    /* 设置字体加粗 */
+    font-weight: 600;
+}
+
+/* 响应式优化，当屏幕宽度小于等于 768px 时应用以下样式 */
 @media (max-width: 768px) {
-    .container {
-        /* 设置内边距为1rem */
-        padding: 1rem;
+    /* 身份卡样式调整 */
+    .id-card {
+        /* 减小身份卡的内边距为 1.5rem */
+        padding: 1.5rem;
     }
     
-    .cyber-nav h1 {
-        /* 设置字体大小为1.2rem */
-        font-size: 1.2rem;
+    /* 身份卡头部标题样式调整 */
+    .card-header h1 {
+        /* 减小标题的字体大小为 2rem */
+        font-size: 2rem;
     }
 }
