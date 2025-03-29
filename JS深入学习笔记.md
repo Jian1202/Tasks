@@ -23,22 +23,19 @@ heading.textContent = "New Heading";
 // 注意：getElementsByClassName返回的是一个类数组对象
 let items = document.getElementsByClassName("item");
 // 遍历获取到的类数组对象items
-for (let i = 0; i < items.length; i++) {
-    // 为每个元素设置背景颜色为"#f0f0f0"（浅灰色）
-    items[i].style.backgroundColor = "#f0f0f0";
+for (let i = 0; i < items.length; i++) {    
+    items[i].style.backgroundColor = "#f0f0f0";// 为每个元素设置背景颜色为"#f0f0f0"（浅灰色）
 }
 
 // 使用querySelector方法获取第一个匹配类名".item"的DOM元素，并将其赋值给变量firstItem
 let firstItem = document.querySelector(".item");
-// 修改第一个匹配元素的文本颜色为红色
-firstItem.style.color = "red";
+firstItem.style.color = "red";// 修改第一个匹配元素的文本颜色为红色
 
 // 使用querySelectorAll方法获取所有匹配类名".item"的DOM元素，返回的是一个真正的数组
 let allItems = document.querySelectorAll(".item");
 // 遍历所有匹配的元素
 allItems.forEach(item => {
-    // 为每个元素设置内边距为10像素
-    item.style.padding = "10px";
+    item.style.padding = "10px";// 为每个元素设置内边距为10像素
 });
 ```
 
@@ -86,13 +83,19 @@ button.addEventListener("dblclick", function() {
 });
 ```
 
+
+
+> [!TIP]
+>
+> ### 事件监听器和事件处理程序
+>
 > **事件监听器**和**事件处理程序**是用来<u>处理页面上各类事件的关键概念</u>
 >
-> **事件处理程序**
+> #### **事件处理程序**
 >
-> 事件处理程序是一段在特定事件发生时执行的代码。可以把它看作是对事件做出响应的函数。事件处理程序能够直接绑定到 HTML 元素上，或者通过 JavaScript 动态添加。以下是事件处理程序的几种常见绑定方式：
+> 事件处理程序是一段在特定事件发生时执行的代码。可以把它看作是对事件做出**响应的函数**。事件处理程序能够直接绑定到 HTML 元素上，或者通过 JavaScript 动态添加。以下是事件处理程序的几种常见绑定方式：
 >
-> **内联事件处理程序**
+> ##### **内联事件处理程序**
 >
 > 直接在 HTML 标签中使用事件属性（如 `onclick`、`onkeyup` 等）来指定事件处理程序。
 >
@@ -101,8 +104,8 @@ button.addEventListener("dblclick", function() {
 > <html lang="en">
 > 
 > <body>
->   <!-- 当按钮被点击时，会调用 alert 函数弹出警告框 -->
->   <button onclick="alert('Button clicked!')">Click me</button>
+> <!-- 当按钮被点击时，会调用 alert 函数弹出警告框 -->
+> <button onclick="alert('Button clicked!')">Click me</button>
 > </body>
 > 
 > </html>
@@ -119,15 +122,15 @@ button.addEventListener("dblclick", function() {
 > <html lang="en">
 > 
 > <body>
->   <button id="myButton">Click me</button>
->   <script>
->     // 获取按钮元素
->     const button = document.getElementById('myButton');
->     // 为按钮的 onclick 事件绑定一个函数
->     button.onclick = function () {
->       alert('Button clicked!');
->     };
->   </script>
+> <button id="myButton">Click me</button>
+> <script>
+>  // 获取按钮元素
+>  const button = document.getElementById('myButton');
+>  // 为按钮的 onclick 事件绑定一个函数
+>  button.onclick = function () {
+>    alert('Button clicked!');
+>  };
+> </script>
 > </body>
 > 
 > </html>
@@ -135,7 +138,7 @@ button.addEventListener("dblclick", function() {
 >
 > 在这个例子中，我们先获取了按钮元素，然后将一个匿名函数赋值给 `button` 的 `onclick` 属性，当按钮被点击时，该函数会被执行。
 >
-> **事件监听器**
+> #### **事件监听器**
 >
 > 事件监听器是一种更灵活、更强大的处理事件的方式。它允许你为一个元素的同一个事件绑定多个处理程序，并且可以控制事件的捕获和冒泡阶段。可以使用 `addEventListener` 方法来添加事件监听器。
 >
@@ -144,19 +147,19 @@ button.addEventListener("dblclick", function() {
 > <html lang="en">
 > 
 > <body>
->   <button id="myButton">Click me</button>
->   <script>
->     // 获取按钮元素
->     const button = document.getElementById('myButton');
->     // 为按钮添加一个点击事件监听器
->     button.addEventListener('click', function () {
->       alert('Button clicked!');
->     });
->     // 为按钮添加另一个点击事件监听器
->     button.addEventListener('click', function () {
->       console.log('Button clicked again!');
->     });
->   </script>
+> <button id="myButton">Click me</button>
+> <script>
+>  // 获取按钮元素
+>  const button = document.getElementById('myButton');
+>  // 为按钮添加一个点击事件监听器
+>  button.addEventListener('click', function () {
+>    alert('Button clicked!');
+>  });
+>  // 为按钮添加另一个点击事件监听器
+>  button.addEventListener('click', function () {
+>    console.log('Button clicked again!');
+>  });
+> </script>
 > </body>
 > 
 > </html>
@@ -164,13 +167,15 @@ button.addEventListener("dblclick", function() {
 >
 > 在这个例子中，我们为按钮元素添加了两个点击事件监听器。当按钮被点击时，这两个事件处理程序都会按顺序执行。
 >
-> **事件监听器和事件处理程序的区别**
+> ### **事件监听器和事件处理程序的区别**
 >
 > - **灵活性**：事件监听器更为灵活，它可以为一个元素的同一个事件绑定多个处理程序，而事件处理程序（如 DOM0 级）同一时间只能绑定一个函数到事件属性上。
 > - **事件阶段控制**：事件监听器可以通过第三个参数控制事件是在捕获阶段还是冒泡阶段触发，而事件处理程序只能在冒泡阶段触发。
 > - **移除事件**：事件监听器可以使用 `removeEventListener` 方法移除，而事件处理程序（如内联事件处理程序）移除起来相对麻烦。
 >
 > 总之，事件处理程序是对事件做出响应的具体代码，而事件监听器是管理和触发这些处理程序的机制。在实际开发中，建议优先使用事件监听器，因为它提供了更多的灵活性和控制能力。
+
+
 
 ### 3. 表单验证
 
@@ -226,7 +231,7 @@ for (let i = 1; i <= 5; i++) {
 document.body.appendChild(newList);
 ```
 
-## 二、JavaScript 与 CSS 的交互
+## 二、JavaScript 与 CSS 的交互（常用）
 
 ### 1. 修改样式
 
