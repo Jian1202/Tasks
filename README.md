@@ -25,7 +25,7 @@
 [CSS属性表](CSS属性表.md)
 
 [JS基础语法知识学习笔记](JS基础语法知识学习笔记.md)
-[JS深入学习笔记](JS深入学习笔记.md)
+[JS深入学习](JS深入学习)
 
 ### 网页demo
 
@@ -33,7 +33,7 @@
 
 [源文件](docs)
 
-#### 网页
+#### 网页：
 
 [Student Log | Jian](https://Jian1202.github.io/Tasks)
 
