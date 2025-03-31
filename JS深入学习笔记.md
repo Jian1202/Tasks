@@ -2,87 +2,389 @@
 
 ## 一、JavaScript 与 HTML 的交互
 
-### 1. DOM [^1]操作
+### 1. 常见DOM [^1]操作
 
 JavaScript 可以通过 DOM（文档对象模型）操作 HTML 元素。
-常用的 DOM 操作方法包括：
 
-- `document.getElementById(id)`：通过元素的 ID 获取**元素**。
-- `document.getElementsByClassName(className)`：通过类名获取**元素集合**。
-- `document.querySelector(selector)`：使用 CSS 选择器获取**第一个匹配的元素**。
-- `document.querySelectorAll(selector)`：使用 CSS 选择器获取**所有匹配的元素集合**。
+#### `document.getElementById(id)`：通过元素的 ID 获取**元素**。
 
+```html
+<!DOCTYPE html>
+<html lang="en">
 
-```javascript
-// 通过元素的id获取DOM元素，这里获取id为"main-heading"的元素，并将其赋值给变量heading
-let heading = document.getElementById("main-heading");
-// 修改获取到的元素的文本内容为"New Heading"
-heading.textContent = "New Heading";
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementById Example</title>
+</head>
 
-// 通过类名获取一组DOM元素，这里获取所有类名为"item"的元素，并将其存储在变量items中
-// 注意：getElementsByClassName返回的是一个类数组对象
-let items = document.getElementsByClassName("item");
-// 遍历获取到的类数组对象items
-for (let i = 0; i < items.length; i++) {    
-    items[i].style.backgroundColor = "#f0f0f0";// 为每个元素设置背景颜色为"#f0f0f0"（浅灰色）
-}
+<body>
+    <button id="myButton">点击我</button>
+    <script>//点击按钮弹出提示框
+        const button = document.getElementById('myButton');
+        button.addEventListener('click', function () {
+            alert('你点击了按钮！');
+        });
+    </script>
+</body>
 
-// 使用querySelector方法获取第一个匹配类名".item"的DOM元素，并将其赋值给变量firstItem
-let firstItem = document.querySelector(".item");
-firstItem.style.color = "red";// 修改第一个匹配元素的文本颜色为红色
-
-// 使用querySelectorAll方法获取所有匹配类名".item"的DOM元素，返回的是一个真正的数组
-let allItems = document.querySelectorAll(".item");
-// 遍历所有匹配的元素
-allItems.forEach(item => {
-    item.style.padding = "10px";// 为每个元素设置内边距为10像素
-});
+</html>
 ```
+![image-20250330155846742](./assets/image-20250330155846742.png)
+
+---
+
+#### `document.getElementsByClassName(className)`：通过类名获取**元素集合**。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementsByClassName Example</title>
+</head>
+
+<body>
+    <p class="highlight">这是一个高亮段落。</p>
+    <p class="highlight">这也是一个高亮段落。</p>
+    <script>
+        const paragraphs = document.getElementsByClassName('highlight');
+        for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].style.color = 'red';
+        }
+    </script>
+</body>
+
+</html>
+```
+![image-20250330160001588](./assets/image-20250330160001588.png)
+
+---
+
+#### `document.querySelector(selector)`：使用 CSS 选择器获取**第一个匹配的元素**。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector Example</title>
+</head>
+
+<body>
+    <ul>
+        <li>列表项 1</li>
+        <li>列表项 2</li>
+        <li>列表项 3</li>
+    </ul>
+    <script>
+        const firstListItem = document.querySelector('ul li');
+        firstListItem.style.fontWeight = 'bold';
+    </script>
+</body>
+
+</html>
+```
+![image-20250330160054759](./assets/image-20250330160054759.png)
+#### `document.querySelectorAll(selector)`：使用 CSS 选择器获取**所有匹配的元素集合**。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelectorAll Example</title>
+</head>
+
+<body>
+    <ul>
+        <li>列表项 1</li>
+        <li>列表项 2</li>
+        <li>列表项 3</li>
+    </ul>
+    <script>
+        const listItems = document.querySelectorAll('ul li');
+        listItems.forEach(function (item) {
+            item.style.textDecoration = 'underline';
+        });
+    </script>
+</body>
+
+</html>
+```
+
+![image-20250330160122961](./assets/image-20250330160122961.png)
+
 
 ### 2. 事件处理
 
-JavaScript 可以处理 HTML 元素的事件，如**点击、鼠标悬停、键盘输入等**。
+JavaScript 可以处理 HTML 元素的==事件==，如**点击、鼠标悬停、键盘输入等**。
 
+### 点击事件
+
+点击事件是 Web 开发中常用的交互方式，可通过多种方式实现。
+
+#### 1. 在 HTML 标签中直接添加
+
+可以直接在 HTML 元素的标签里使用 `onclick` 属性来指定点击事件触发的函数。
 
 ```html
- <!-- 这是一个按钮元素，id 属性设置为 "my-button"，按钮上显示的文本是 "Click me"，调用 JavaScript 函数 -->
-  <button id="my-button">Click me</button>
-  <!-- 这是一个输入框元素，type 属性设置为 "text" 表示这是一个文本输入框，用户可以在其中输入文本内容，id 属性设置为 "my-input" 用于获取和操作该元素 -->
-  <input type="text" id="my-input">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 标签直接添加点击事件</title>
+</head>
+<body>
+    <button onclick="showMessage()">点击我</button>
+    <script>
+        function showMessage() {
+            alert('按钮被点击了');
+        }
+    </script>
+</body>
+</html>
 ```
 
-```javascript
-// 通过元素的 id 属性 "my-button" 获取按钮元素，并将其赋值给变量 button
-let button = document.getElementById("my-button");
+在这个例子中，当按钮被点击时，`showMessage` 函数会被调用，弹出提示框。
 
-// 为按钮元素的 onclick 事件绑定一个匿名函数
-// 当按钮被点击时，会弹出一个包含 "Button clicked!" 消息的警告框
-button.onclick = function() {
-    alert("Button clicked!");
-};
+![image-20250331081002235](./assets/image-20250331081002235.png)
 
-// 通过元素的 id 属性 "my-input" 获取输入框元素，并将其赋值给变量 input
-let input = document.getElementById("my-input");
+#### 2. 通过 DOM 获取元素添加
 
-// 为输入框元素的 onkeyup 事件绑定一个匿名函数
-// 当在输入框中按下某个键并松开时，会在控制台输出 "Key pressed:" 以及当前输入框中的值
-input.onkeyup = function() {
-    console.log("Key pressed:", this.value);
-};
+使用 `document.getElementById` 等方法获取元素，然后设置其 `onclick` 属性为一个函数。
 
-// 使用 addEventListener 方法为按钮元素添加一个 "click" 事件监听器
-// 当按钮被点击时，会在控制台输出 "Button clicked using addEventListener!"
-button.addEventListener("click", function() {
-    console.log("Button clicked using addEventListener!");
-});
-
-// 使用 addEventListener 方法为按钮元素添加一个 "dblclick" 事件监听器
-// 当按钮被双击时，会在控制台输出 "Button double clicked!"
-button.addEventListener("dblclick", function() {
-    console.log("Button double clicked!");
-});
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过 DOM 获取元素添加点击事件</title>
+</head>
+<body>
+    <button id="btn">点击我</button>
+    <script>
+        document.getElementById("btn").onclick = function() {
+            alert('按钮被点击了');
+        };
+    </script>
+</body>
+</html>
 ```
 
+这里通过 `document.getElementById` 获取按钮元素，接着将其 `onclick` 属性设为一个**匿名函数**，点击按钮时会弹出提示框。
+
+![image-20250331081252401](./assets/image-20250331081252401.png)
+
+#### 3. 使用事件监听方式添加
+
+利用 `addEventListener` 方法为元素添加点击事件监听器。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用事件监听方式添加点击事件</title>
+</head>
+<body>
+    <button id="btn">点击我</button>
+    <script>
+        var el = document.getElementById("btn");
+        el.addEventListener("click", function() {
+            alert('按钮被点击了');
+        }, false);
+    </script>
+</body>
+</html>
+```
+
+在这个示例中，通过 `addEventListener` 方法为按钮添加了一个点击事件监听器，点击按钮时会弹出提示框。`addEventListener` 方法的第三个参数 `false` 表示使用冒泡阶段。
+
+**![image-20250331081408806](./assets/image-20250331081408806.png)**
+
+**==可以看到上述三种情况html代码呈现情况是一致的==，但本质上还是有些区别的：**
+
+| 对比项               | 在 HTML 标签中直接添加 `onclick` 属性                        | 通过 DOM 获取元素添加 `onclick` 属性                         | 使用 `addEventListener` 方法添加事件监听器                   |
+| -------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 语法和代码位置       | 将 JavaScript 代码直接写在 HTML 标签的 `onclick` 属性里，代码与 HTML **紧密耦合** | 先使用 `document.getElementById` 等方法获取 HTML 元素，然后为其`onclick` 属性**赋值一个函数**，代码通常写在 `<script>` 标签内 | 先获取 HTML 元素，再调用 `addEventListener` 方法添加**事件监听器**，代码写在 `<script>` 标签内 |
+| 事件绑定数量         | **一个元素只能绑定一个 `onclick` 事件处理函数**，多次赋值时后面的<u>会覆盖</u>前面的 | **一个元素只能绑定一个 `onclick` 事件处理函数**，多次赋值时后面的<u>会覆盖</u>前面的 | **可以为同一个元素的同一个事件类型添加多个事件处理函数**，这些函数会按照添加的<u>顺序依次执行</u> |
+| 事件流控制           | <u>无法对事件流（冒泡和捕获）进行控制，默认使用冒泡阶段</u>  | <u>无法对事件流（冒泡和捕获）进行控制，默认使用冒泡阶段</u>  | 可以通过第三个参数来控制事件是在冒泡阶段[^2]还是捕获阶段[^3]触发。当第三个参数为 `true` 时，事件在捕获阶段触发；为 `false` 或省略时，事件在冒泡阶段触发 |
+| 代码可维护性和分离性 | HTML 和 JavaScript 代码混杂在一起，不利于代码的维护和管理，在大型项目中会使代码结构混乱 | HTML 和 JavaScript 代码分离，提高了代码的可维护性和可读性，方便后续开发和修改 | HTML 和 JavaScript 代码分离，提高了代码的可维护性和可读性，方便后续开发和修改 |
+
+### 鼠标悬停事件
+
+鼠标悬停事件能增强用户与页面元素的交互效果，有多种实现途径。
+
+#### 1. 使用 HTML 的 onmouseover 属性
+
+将函数直接绑定到 HTML 元素的 `onmouseover` 属性上，当鼠标悬停在该元素上时，相应的函数将被调用。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用 HTML 的 onmouseover 属性</title>
+</head>
+<body>
+    <button onmouseover="changeColor(this)">悬停触发函数</button>
+    <script>
+        function changeColor(element) {
+            element.style.backgroundColor ='red';
+        }
+    </script>
+</body>
+</html>
+```
+
+此例中，当鼠标悬停在按钮上时，`changeColor` 函数会被调用，按钮背景颜色变为红色。
+
+#### 2. 使用 JavaScript 的 addEventListener 方法
+
+使用 `addEventListener` 方法来为 HTML 元素添加鼠标悬停事件的监听器。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用 JavaScript 的 addEventListener 方法</title>
+</head>
+<body>
+    <button id="myButton">悬停我</button>
+    <script>
+        function changeColor() {
+            this.style.backgroundColor = 'green';
+        }
+        document.getElementById("myButton").addEventListener("mouseover", changeColor);
+    </script>
+</body>
+</html>
+```
+
+这里通过 `addEventListener` 方法为按钮添加了鼠标悬停事件监听器，鼠标悬停时按钮背景颜色变为绿色。
+
+#### 3. 使用 jQuery 的 hover 方法
+
+如果使用了 jQuery 库，可以使用其 `hover` 方法来实现鼠标悬停事件的绑定。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用 jQuery 的 hover 方法</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="myButton">悬停我</button>
+    <script>
+        $("#myButton").hover(function() {
+            $(this).css("background-color", "yellow");
+        }, function() {
+            $(this).css("background-color", "");
+        });
+    </script>
+</body>
+</html>
+```
+
+此示例中，当鼠标悬停在按钮上时，按钮背景颜色变为黄色，鼠标离开时恢复默认颜色。
+
+### 键盘输入事件
+
+键盘输入事件可捕捉用户在键盘上的操作，包含以下几种类型。
+
+#### 1. keydown 事件
+
+当按下键盘上的某个键时触发，并在按住该键时重复触发。可以通过 `event.keyCode` 或 `event.which` 获取按下键的编码信息。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keydown 事件</title>
+</head>
+<body>
+    <input type="text" id="message">
+    <script>
+        let msg = document.getElementById('message');
+        msg.addEventListener("keydown", (event) => {
+            console.log('按下键的编码：', event.keyCode);
+        });
+    </script>
+</body>
+</html>
+```
+
+在这个例子中，当在文本框中按下键盘上的键时，会在控制台输出按下键的编码。
+
+#### 2. keyup 事件
+
+当释放键盘上的键时触发。同样可以通过 `event.keyCode` 等属性获取相关信息。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyup 事件</title>
+</head>
+<body>
+    <input type="text" id="message">
+    <script>
+        let msg = document.getElementById('message');
+        msg.addEventListener("keyup", (event) => {
+            console.log('释放键的编码：', event.keyCode);
+        });
+    </script>
+</body>
+</html>
+```
+
+此示例中，当在文本框中释放键盘上的键时，会在控制台输出释放键的编码。
+
+#### 3. keypress 事件
+
+当按下字符键盘（如 `a`、`b`、`c` 等）时触发，而不是方向键等控制键。不过在中文输入法下，有些浏览器可能不会触发此事件。可通过 `event.charCode`（非 IE 浏览器）或 `event.keyCode`（IE 浏览器）获取输入字符的编码。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keypress 事件</title>
+</head>
+<body>
+    <input type="text" id="message">
+    <script>
+        let msg = document.getElementById('message');
+        msg.addEventListener("keypress", (event) => {
+            console.log('输入字符的编码：', event.charCode || event.keyCode);
+        });
+    </script>
+</body>
+</html>
+```
+
+这里当在文本框中按下字符键时，会在控制台输出输入字符的编码。
 
 
 > [!TIP]
@@ -579,3 +881,5 @@ updateLayout();
 ## *注释
 
 [^1]:“DOM” 即文档对象模型（Document Object Model）。它是一种用于 HTML 和 XML 文档的**编程接口**，<u>将网页文档表示为一个由节点组成的树形结构</u>。通过 DOM，可以使用编程语言（如 JavaScript）来<u>访问和操作</u>网页中的各个元素，如修改文本内容、改变样式、添加或删除节点等。DOM 提供了一种标准化的方法来处理网页文档，使得开发者能够更方便地与网页进行交互和动态更新。
+[^2]:冒泡阶段是指事件从具体的<u>目标元素</u>开始**向上传播**，依次经过其祖先元素，就像水中的气泡从底部往上升一样。例如，在一个嵌套的 HTML 元素结构中，当内部元素上发生一个点击事件时，这个事件会先在内部元素上触发，然后依次向上在其父元素、祖父元素等上触发，**直到到达文档的根元素**。
+[^3]:捕获阶段则是事件从最外层的<u>祖先元素</u>开始**向下传播**，直到到达具体的目标元素。在这个过程中，事件先在祖先元素上触发，**然后逐渐向目标元素靠近**。

@@ -77,7 +77,7 @@ graph TD
   A --> D[头部]
   A --> E[主体]
   
-  B[文档声明] --> B1["< !DOCTYPE> html
+  B[文档声明] --> B1["< !DOCTYPE html>
   （标识HTML5标准）"]
   C[根标签] --> C1["< html>
   （包裹整个页面）"]
@@ -101,9 +101,9 @@ graph TD
 （字符编码）"]
   D --> D2["< meta name='viewport'>
   （移动端适配）"]
-  D --> D3["< title > 标题 < /title>
+  D --> D3["< title> 标题 < /title>
   （SEO关键）"]
-  D --> D4["<link>
+  D --> D4["< link>
   （引入CSS）"]
   D --> D5["< script>
   （引入JS）"]
