@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><!--设置网页语言为中文-->
+
+<head>
+    <meta charset="UTF-8"><!--设置字符编码-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><!--设置视口-->
+    <link rel="stylesheet" href="styles.css"><!--引入样式表-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!--引入fontawesome字体库-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"><!--引入Google字体库-->
+    <script src="script.js"></script><!--引入脚本文件-->
+    <title>加入Geek 吧！！！</title><!--设置网页标题-->
+</head>
+
+<body>
+    <!-- 导航栏部分 -->
+    <nav class="nav">
+        <ul>
+            <li><a class="nav-intro" href="#introduction" data-toggle="qrcode-popup">Introduction <i
+                        class="fa fa-angle-down"></i></a></li>
+            <li><a class="nav-about" href="#about-us">About Us <i class="fa fa-user"></i></a></li>
+            <li><a class="nav-newthread" href="https://campus.new-thread.com/" target="_blank">NewThread <i
+                        class="fa fa-home"></i></a></li>
+            <li><a class="nav-contact" href="#contact-us">Contact Us <i class="fa fa-phone"></i></a></li>
+            <li><a class="nav-qa" href="#qa">Q&A <i class="fa fa-comments"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- 顶部图片部分 -->
+    <div class="首页-container">
+        <a href="https://geek.measy.top/" target="_blank" title="Geek 吧小游戏！！！">
+            <img src="image\decoration_Geek.png" class="decoration-geek-image zoomable-image_GEEK image-top" alt="decoration_Geek">
+        </a>
+        <img src="image\background_Homepage.png" class="image-bottom" alt="background_Homepage">
+
+        <!-- 介绍部分 -->
+        <div class="intro">
+            <div>
+                <img src="image\decoration_Transition.png" class="decoration_intro" alt="decoration_Transition">
+                <h1 class="overlay-text intro_h1 ">Introduction <i class="fa fa-angle-down"></i></h1>
+            </div>
+            <div class="开发程序猿 zoomable-image_intro">
+                <h1 class="intro_Programmer_h1">开发程序猿</h1>
+                <h2 class="intro_Programmer_h2">“Stay Hungry，Stay Foolish”</h2>
+                <p class="intro_Programmer_p">
+                    前端：前端开发是创建Web或app视觉界面呈现给用户的过程通过HTML，CSS及JavaScript以及衍生出来的各种技术、框架、解决方案，实现互联网产品的用户界面交互。
+                </p>
+                <p class="intro_Programmer_p">后端：通常也称服务器端开发。不对用户显示,负责处理前端的请求，进行逻辑处理和数据交互。客户端:
+                    移动应用开发是为了小型、无线计算设备编写软件的流程和程序的集合，例如智能手机或平板电脑。
+                </p>
+                <img src="image\Geek_Programmer.png" class="Geek_Programmer zoomable-image_GEEK_Programmer">
+            </div>
+            <div class="产品经理 zoomable-image_intro">
+                <h1 class="intro_PM_h1">产品经理</h1>
+                <h2 class="intro_PM_h2">"好的软件的特征是,明明没用过，但总觉得用过似的。"</h2>
+                <p class="intro_PM_p">PM是针对某一项或是某一类的产品进行规划和管理的人员。 PM需要拥有缜密的产品逻辑思维，研究用户心理，负责产品的整个生命周期。
+                    PM参与产品的UI和交互设计，为设计和开发确定产品原型，能够将产品变得有个性,操作变得舒适简单、自由。 PM需要一定的文档能力和沟通能力，能够在团队合作的过程中跟各个角色进行有效沟通。
+                </p>
+                <img src="image\Geek_PM.png" class="Geek_PM zoomable-image_GEEK_PM">
+            </div>
+            <div class="游戏开发 zoomable-image_intro">
+                <h1 class="intro_Game_h1">游戏开发</h1>
+                <h2 class="intro_Game_h2">"TECH OTAKUS SAVE THE WORLD"</h2>
+                <p class="intro_Game_p">对游戏开发的热爱和追求，使我们相聚于此。
+                    涉及计算机图形学的学习，我们使用物理模拟引擎Unity开发我们所追求的世界，一个故事，一个角色，在我们的世界里改变现实，创造新的可能，我们参与，我们改变，我们创造...
+                </p>
+                <img src="image\Geek_Game.png" class="Geek_Game zoomable-image_GEEK_Game">
+            </div>
+            <div class="安全 zoomable-image_intro">
+                <h1 class="intro_Security_h1">安全</h1>
+                <h2 class="intro_Security_h2">"路漫漫其修远兮，非大毅力者不能"</h2>
+                <p class="intro_Security_p">
+                    我们主要学习Web安全和二进制安全。在Web安全中我们将学习和实践Web漏洞挖掘技术，也将探索和讨论Web安全实践的方法。在二进制安全中我们专注于分析和防御与计算机程序、系统相关的威胁，同时实践漏洞分析和修补。耐心和钻研缺一不可。
+                </p>
+                <img src="image\Geek_security.png" class="Geek_Security zoomable-image_GEEK_Security">
+            </div>
+        </div>
+
+        <div class="about-us-container">
+            <div>
+                <h1 class="about-us_h1">About Us <i class="fa fa-universal-access"></i></h1>
+            </div>
+            <div>
+                <img src="image\decoration_Decoration.png" class="decoration_about-1">
+            </div>
+            <div>
+                <img src="image\decoration_Decoration.png" class="decoration_about-2">
+            </div>
+            <div>
+                <img src="image\decoration_Decoration.png" class="decoration_about-3">
+            </div>
+            <div>
+                <img src="image\decoration_Decoration.png" class="decoration_about-4">
+            </div>
+            <div>
+                <img src="image\decoration_Butterfly.png" title="保持好奇心！"
+                    class="decoration_about-5 zoomable-image-decoration_about-5">
+            </div>
+            <div class="about-us-content-speech zoomable-image-about-speech">
+                <img src="image\about_Speech.png" class="about-us-content-img-speech">
+                <p class="about-us-content-speech-text">每周我们会举行一次技术例会，用来汇报我们的学习内容，供成员之间交流学习。</p>
+            </div>
+            <div class="about-us-content-diversity zoomable-image-about-diversity">
+                <img src="image\about_Diversity.png" class="about-us-content-img-diversity">
+                <p class="about-us-content-diversity-text">多元化是我们的特色。在这里，你可以拥有多种方向选择，前后端、安全、AI、产品/设计、游戏等。</p>
+            </div>
+            <div class="about-us-content-time zoomable-image-about-time">
+                <img src="image\about_Time.png" class="about-us-content-img-time">
+                <p class="about-us-content-time-text">耐心、毅力是我们必备的品质，每周我们会至少花30小时在实验室中。以保证技术的精进。</p>
+            </div>
+
+        </div>
+        <div class="contact-us-container">
+            <div>
+                <img src="image\decoration_TreeWithSometing.png" class="decoration_contact-1">
+            </div>
+            <div>
+                <img src="image\decoration_Tree.png" class="decoration_contact-2">
+            </div>
+            <div>
+                <img src="image\decoration_Leaves.png" class="decoration_contact-3">
+            </div>
+            <div>
+                <img src="image\decoration_Ladybug.png" class="decoration_contact-4">
+            </div>
+            <div>
+                <img src="image\decoration_Chameleon.png" class="decoration_contact-5">
+            </div>
+            <div>
+                <h1 class="contact-us_h1">Contact Us <i class="fa fa-phone"></i></h1>
+                <p class="contact-us_p1">
+                    •热爱计算机，具有geek精神，喜欢DIY，动手能力较强<br>
+                    •有编程/算法/硬件基础为佳(有作品可附上)<br>
+                    •有足够的空余时间，热爱思考，对事物有自己的见解
+                </p>
+                <p class="contact-us_p2">ps:非新思路统招只有通过发送邮件自我介绍后，收到邮件回执后才会被允许进群,在读学生,
+                    都可邮件到newthread_geek@outlook.com报名加入.(信中需备注个人基本信息以及意向方向,此招新活动为长期招新)</p>
+            </div>
+            <div class="contact-methods">
+                <a href="#" class="contact-link">QQ-Group <i class="fa-brands fa-qq"></i></a>
+                <a href="javascript:;" class="contact-link" id="email-button">E-mail <i class="fa fa-envelope"></i></a>
+                <a href="https://www.bilibili.com/video/BV1GJ411x7h7/?spm_id_from=333.337.search-card.all.click&vd_source=4fd345da90efe43959b302726653c554"
+                    target="_blank" class="contact-link">Github <i class="fa-brands fa fa-github"></i></a>
+            </div>
+
+            <div id="email-popup" class="contact-popup hidden">
+
+                <div class="popup-content">
+                    <p class="popup-text">Geek的邮箱已经复制到剪贴板了哦！</p>
+                    <button id="close-popup" class="close-button">关闭</button>
+                </div>
+            </div>
+        </div>
+        <div class="qa-container">
+            <div>
+                <h1 class="qa_h1">More Questions <i class="fa fa-comments"></i></h1>
+                <div class="qa_list">
+
+                    <ul class="qa_ul">
+                        <li>
+                            <a class="qa_a" href="javascript:;">1. 什么是Geek(极客)?Geek精神又是什么?</a>
+                            <p class="answer">拥有好奇之心，改变之力，爱钻研，能折腾。</p>
+                        </li>
+                        <li>
+                            <a class="qa_a" href="javascript:;">2. Geek组有什么特点?</a>
+                            <p class="answer">
+                                Geek组是一个较为年轻的小组,我们自由且有态度。<br>Geek组成员一起参与比赛和项目让我们进一步了解彼此,<br>一起探索技术背后的原理让我们为之兴奋,<br>多元的发展让我们广开眼界。
+                            </p>
+                        </li>
+                        <li>
+                            <a class="qa_a" href="javascript:;">3. 招新是安排在什么时间?</a>
+                            <p class="answer">
+                                按照惯例,正式招新时间是在9月下旬~10月上旬,<br>不过今年会有一些改动,笔试地点一般在9号教学楼。<br>如果想要了解我们,可以加入我们的QQ群,<br>招新具体的安排/变动会在招新群通知。
+                            </p>
+                        </li>
+                        <li>
+                            <a class="qa_a" href="javascript:;">4. 我们有考核吗?考核流程是怎样的呀?</a>
+                            <p class="answer">
+                                嗯...我们一共有一轮笔试和两轮面试。<br>权衡技术、经验和学习能力，<br>第一轮是一些视野性的题目，淘汰率并不高。<br>第二轮单独面试，根据你的笔试提出技术相关的问题、兴趣爱好、个人看法。<br>最后一轮群面，首先问及时间分配上的问题，<br>其次也会向你提出各种有趣的问题。<br>这一轮中许多题目其实并不难，也无标准答案，<br>重在考察同学们在压力下的逻辑思维。全部通过成为预备成员啦。
+                            </p>
+                        </li>
+                        <li>
+                            <a class="qa_a" href="javascript:;">5. 考核是怎样的形式?</a>
+                            <p class="answer">
+                                在考核期间每人会拥有一位'长者'带你入门,<br>学习技术与知,交流经验与想法。<br>完成每周的新人任务后再进行一次考核筛选后就可以成为Geek组正式成员啦!<br>
+                                在考核期必须满足每周30个小时在实验室哦,所以考核期也不可以懈怠哦！</p>
+                        </li>
+                        <li>
+                            <a class="qa_a" href="javascript:;">6. 进入Geek组之后,都有什么福利呢?</a>
+                            <p class="answer">
+                                一对一的新人指引,每一个成员都有会一个mentor,<br>带你初入门槛，与你一同成长，组内管理较宽松,<br>在尊重其他人的前提下可以尽情发挥自己的个性。<br>打破平淡,与同样疯狂的人把疯狂的idea实现,<br>磨砺耐性、培养思维、成就梦想。<br>Lab设备/网络资源充足，闲暇之余也有组织活动。更有许多的故事等你来听~
+                            </p>
+                        </li>
+                        <li>
+                            <a class="qa_a" href="javascript:;">7. 进入团队会影响我的日常学习吗?</a>
+                            <p class="answer">
+                                你要知道大学是一个可以自由安排自己学习生活的地方。<br>如果你想在上课之余充实自己、激励自己，<br>最好的方法就是和比自己更优秀的人在一起。<br>团队不缺优秀的人，而我们也期待同样优秀的你，<br>让我们一起前进！小组里也有不少保研,考研的前辈们,
+                                <br>大部分都能找到一个平衡点, 而且团队的经历对你日后读研, 工作都大有裨益。</p>
+                        </li>
+                        <li>
+                            <a class="qa_a" href="javascript:;">8. 老师以及学长学姐们的期望是什么?</a>
+                            <p class="answer">
+                                我们希望你有很强的自学能力,同时关注新事物、新技术,<br>喜欢挑战,逻辑性强,善于和各种文化的人合作。<br>“每个人都可以做自己想做的事情,每个人的方向不一样。<br>如果你想做产品或有不错的idea,那么就可以找志同道合的人一起合作。”
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <button id="backToTopButton">
+            <i class="fa fa-angle-up"></i>
+        </button>
+        <button id="backToTopButton2">
+            <i class="fal fa-rocket rocket" ></i>
+        </button>
+
+        <footer class="footer">
+            <div id="footer1">[ prentending this is true <i class="fa fa-desktop"></i> ]</div>
+            <div id="footer2">Copyright©2002-2022 itaweya.github.io All Right Reserved 备案号：Crazy Thursday V_me 50！！！
+            </div>
+        </footer>
+
+</body>
+
+</html>

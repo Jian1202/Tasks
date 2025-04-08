@@ -1,0 +1,1455 @@
+/* CSS全局样式 */
+* {
+    box-sizing: border-box;
+    /* 使用border-box模型，简化宽高计算 */
+    padding: 0;
+    /* 清除所有元素的内边距 */
+    margin: 0;
+    /* 清除所有元素的外边距 */
+}
+
+a {
+    text-decoration: none;
+    /* 去掉超链接的默认下划线 */
+}
+
+/* 导航栏样式 */
+.nav {
+    position: fixed;
+    /* 固定导航栏的位置，确保在滚动时始终可见 */
+    width: 100%;
+    /* 设置宽度为100%，使导航栏横跨整个窗口 */
+    top: 10px;
+    /* 距离顶部10px，提供必要的顶部空间 */
+    height: 60px;
+    /* 设置导航栏的高度为60px */
+    background-color: rgb(255, 170, 0, 0.9);
+    /* 设置背景颜色为半透明橙色 */
+    list-style-type: none;
+    /* 去掉默认的列表项目样式 */
+    margin: 0;
+    /* 设置外边距为0，避免默认外边距影响布局 */
+    padding: 0;
+    /* 设置内边距为0，清除任何内边距 */
+    padding-top: 7px;
+    /* 设置上内边距为7px，确保内容不贴边 */
+    border-radius: 20px;
+    /* 设置导航栏的圆角半径为20px，增加美观 */
+    z-index: 999;
+    /* 设置层级，使导航栏处于最上层，防止被其他元素遮挡 */
+}
+
+/* 导航链接颜色设置 */
+.nav-intro,
+.nav-about,
+.nav-contact,
+.nav-qa {
+    color: white;
+    /* 设置这些导航链接的文本颜色为白色，以提高可读性 */
+}
+
+.nav-newthread {
+    color: #909090;
+    /* 设置"NewThread"链接的文本颜色为灰色，与其他链接形成对比 */
+}
+
+/* 导航栏列表样式 */
+.nav ul {
+    display: flex;
+    /* 使用flex布局，使导航项在同一行显示 */
+    justify-content: space-around;
+    /* 平均分布导航项之间的空间，确保平衡美观 */
+    padding: 0;
+    /* 清除ul的内边距，保持布局整洁 */
+}
+
+/* 每个导航项的基本样式 */
+.nav ul li {
+    list-style: none outside;
+    /* 去掉默认列表样式，使自定义样式生效 */
+    display: inline-block;
+    /* 使列表项为inline-block，以便设置大小 */
+    padding-left: 0;
+    /* 设置左内边距为0，避免影响排列 */
+    flex: 1;
+    /* 使每个列表项平分父元素的空间 */
+}
+
+/* 链接样式设置 */
+nav ul li a {
+    display: block;
+    /* 使链接为块级元素，便于控制高度和宽度 */
+    text-align: center;
+    /* 文本居中对齐，使链接文本看起来更整齐 */
+    line-height: 25px;
+    /* 设置行高为25px，使文本垂直居中 */
+    text-decoration: none;
+    /* 去掉链接的下划线，提升美观性 */
+    font-size: 25px;
+    /* 设置字体大小为25px，以提高可读性 */
+}
+
+/* 导航项的内边距设置 */
+.nav li {
+    padding: 10px;
+    /* 每个导航项的内边距设置为10px，提供适当的点击区域 */
+}
+
+/* 所有链接的全局样式设置 */
+.nav a {
+    text-decoration: none;
+    /* 去掉链接下划线，保持视觉整洁 */
+}
+
+/* 鼠标悬停导航链接样式 */
+.nav a:hover {
+    color: #909090;
+    /* 悬停时链接文本颜色变为灰色 */
+    padding-top: 17px;
+    /* 悬停时增加上内边距，使链接位置上移 */
+    background-color: rgba(255, 145, 80, 0.7);
+    /* 悬停时背景颜色变为橙色 */
+    border-radius: 15px;
+    /* 悬停时添加圆角效果，提升视觉效果 */
+    width: 100%;
+    /* 宽度扩展为100%以覆盖整个列表项 */
+    margin-top: -17px;
+    /* 向上移动17px，增强悬停效果 */
+    height: 60px;
+    /* 高度保持为60px，与导航栏一致 */
+    transition: transform;
+    /* 添加过渡效果，使动画更平滑 */
+    transform: scale(1.1);
+    /* 放大10%，增强视觉效果 */
+}
+
+
+
+/* 图片容器样式 */
+.首页-container {
+    position: relative;
+    /* 相对定位，便于子元素使用绝对定位 */
+    height: 800px;
+    /* 容器高度设置为800px */
+    width: 100%;
+    /* 容器宽度设置为100% */
+    padding-top: 0%;
+    /* 上内边距设置为0 */
+    margin-top: -125px;
+    /* 向上移动125px，增强视觉效果 */
+}
+
+/* 上层图片样式 */
+.image-top {
+    position: relative;
+    /* 相对定位，保持图片在正常文档流中 */
+    top: 42%;
+    /* 上移42%，调整位置 */
+    left: 37%;
+    /* 左移37%，调整位置 */
+    transform: translate(0%, 0%);
+    /* 不进行位移 */
+    width: 400px;
+    /* 设置宽度为400px */
+    height: 194px;
+    /* 设置高度为194px */
+    z-index: 1;
+    /* 确保上层图片显示在其他元素之上 */
+}
+
+/* 下层图片样式 */
+.image-bottom {
+    position: relative;
+    /* 相对定位，确定在文档流的位置 */
+    top: 0%;
+    /* 保持在顶部位置 */
+    width: 100%;
+    /* 宽度设置为100% */
+    height: auto;
+    /* 高度自动，保持纵横比 */
+    z-index: 0;
+    /* 设置为下层，确保被上层图片遮挡时不影响视觉 */
+}
+
+/* 可缩放图片样式 */
+.zoomable-image_GEEK,
+.zoomable-image_GEEK_Programmer,
+.zoomable-image_GEEK_PM,
+.zoomable-image_GEEK_Game,
+.zoomable-image_GEEK_Security,
+.zoomable-image_intro,
+.zoomable-image-about-speech,
+.zoomable-image-about-diversity,
+.zoomable-image-about-time,
+.zoomable-image-decoration_about-5 {
+    transition: transform 0.8s ease;
+    /* 添加平滑缩放效果，持续时间为0.8秒 */
+}
+
+/* 鼠标悬停可缩放图片的效果 */
+.zoomable-image_GEEK:hover {
+    cursor: pointer;
+    /* 鼠标悬停时显示手型 */
+    transform: scale(1.7);
+    /* 悬停时放大图片到1.7倍 */
+}
+
+.zoomable-image_GEEK_Programmer:hover {
+    transform: rotate(-18deg);
+    /* 悬停时将图片逆时针旋转18度 */
+}
+
+.zoomable-image_GEEK_PM:hover {
+    transform: rotate(18deg);
+    /* 悬停时将图片顺时针旋转18度 */
+}
+
+.zoomable-image_GEEK_Game:hover {
+    transform: rotate(-18deg);
+    /* 悬停时将图片逆时针旋转18度 */
+}
+
+.zoomable-image_GEEK_Security:hover {
+    transform: rotate(18deg);
+    /* 悬停时将图片顺时针旋转18度 */
+}
+
+.zoomable-image_intro:hover {
+    transform: scale(1.1);
+    /* 悬停时放大图片到1.1倍 */
+}
+
+.zoomable-image-about-speech:hover {
+    cursor: pointer;
+    /* 鼠标悬停时显示手型 */
+    transform: scale(1.1);
+    /* 悬停时放大图片到1.1倍 */
+}
+
+.zoomable-image-about-diversity:hover {
+    cursor: pointer;
+    /* 鼠标悬停时显示手型 */
+    transform: scale(1.1);
+    /* 悬停时放大图片到1.1倍 */
+}
+
+.zoomable-image-about-time:hover {
+    cursor: pointer;
+    /* 鼠标悬停时显示手型 */
+    transform: scale(1.1);
+    /* 悬停时放大图片到1.1倍 */
+}
+
+/* 装饰元素样式 */
+.zoomable-image-decoration_about-5:hover {
+    transform: translateY(10px);
+    /* 悬停时向下移动10px */
+}
+
+/* 内容区域样式 */
+.content {
+    margin-top: 50px;
+    /* 设置上外边距为50px，确保内容与导航不重叠 */
+    padding-top: 0%;
+    /* 上内边距设置为0 */
+}
+
+/* 装饰图片样式 */
+.decoration_intro {
+    position: relative;
+    /* 相对定位，保持在正常文档流中 */
+    padding-top: 0px;
+    /* 上内边距设置为0 */
+    margin-top: 0px;
+    /* 上外边距设置为0 */
+    width: 100%;
+    /* 宽度设置为100% */
+    height: auto;
+    /* 高度自动，保持设计比例 */
+    z-index: 0;
+    /* 设置层级，使其在其他元素之上 */
+}
+
+/* 介绍部分样式 */
+.intro {
+    position: relative;
+    /* 相对定位，保持在正常文档流中 */
+    margin-top: 0%;
+    /* 上外边距设置为0 */
+    padding-top: 0%;
+    /* 上内边距设置为0 */
+    text-align: center;
+    /* 文本居中对齐 */
+}
+
+/* 主要标题样式 */
+.intro_h1 {
+    font-weight: bold;
+    /* 字体设为粗体，强调标题 */
+    margin-top: -200px;
+    color: rgb(0, 0, 139);
+    /* 设置标题字体颜色为深蓝色 */
+    background-color: #ffffff;
+    /* 背景颜色为白色，增强对比 */
+    border-radius: 10px;
+    /* 添加圆角效果 */
+    text-align: center;
+    /* 文本居中对齐 */
+    z-index: 5;
+    /* 设置层级，确保在上方 */
+}
+
+/* 覆盖文字样式 */
+.overlay-text {
+    position: absolute;
+    /* 绝对定位，使其脱离文档流并按指定位置放置 */
+    top: 10%;
+    /* 距离顶部10% */
+    left: 42%;
+    /* 距离左侧42% */
+    font-size: 50px;
+    /* 设置字体大小为50px */
+}
+
+/* 程序员图片样式 */
+.Geek_Programmer {
+    margin-top: -1000px;
+    /* 向上移动1000px，确保位置突出 */
+    margin-bottom: 50px;
+    /* 设置下外边距为50px，保持元素间距离 */
+    margin-left: 780px;
+    /* 左移780px，调整位置 */
+    padding-top: 0%;
+    /* 上内边距设置为0 */
+    text-align: center;
+    /* 文本居中对齐 */
+    width: 30%;
+    /* 设置宽度为30% */
+    height: auto;
+    /* 高度自动 */
+}
+
+.Geek_PM {
+    margin-top: -1000px;
+    /* 向上移动1000px，确保位置突出 */
+    margin-bottom: 0px;
+    /* 设置下外边距为0px */
+    margin-right: 780px;
+    /* 向左移动780px，调整位置 */
+    padding-top: 0%;
+    /* 上内边距设置为0 */
+    text-align: center;
+    /* 文本居中对齐 */
+    width: 25%;
+    /* 设置宽度为25% */
+    height: auto;
+    /* 高度自动 */
+}
+
+.Geek_Game {
+    margin-top: -1000px;
+    /* 向上移动1000px，确保位置突出 */
+    margin-bottom: -50px;
+    /* 设置下外边距为50px，保持元素间距离 */
+    margin-left: 780px;
+    /* 左移780px，调整位置 */
+    padding-top: 0%;
+    /* 上内边距设置为0 */
+    text-align: center;
+    /* 文本居中对齐 */
+    width: 30%;
+    /* 设置宽度为30% */
+    height: auto;
+    /* 高度自动 */
+}
+
+.Geek_Security {
+    margin-top: -280px;
+    /* 向上移动1000px，确保位置突出 */
+    margin-bottom: 0px;
+    /* 设置下外边距为0px */
+    margin-right: 780px;
+    /* 向左移动780px，调整位置 */
+    padding-top: 0%;
+    /* 上内边距设置为0 */
+    text-align: center;
+    /* 文本居中对齐 */
+    width: 25%;
+    /* 设置宽度为25% */
+    height: auto;
+    /* 高度自动 */
+}
+
+/* 带有圆角边框和阴影的矩形元素样式 */
+.开发程序猿 {
+    justify-content: space-around;
+    /* 内容在子元素之间平均分配 */
+    display: block;
+    /* 设置为块级元素 */
+    align-items: center;
+    /* 内容垂直居中 */
+    border: 5px solid #0000006a;
+    /* 设置灰色边框 */
+    border-radius: 50px;
+    /* 设置圆角半径为50px */
+    width: 1200px;
+    /* 设置宽度为1200px */
+    height: 550px;
+    /* 设置高度为550px */
+    margin-left: 250px;
+    /* 左侧外边距设置为250px，调整位置 */
+    margin-top: 50px;
+    /* 上外边距设置为100px */
+    background-color: #fff;
+    /* 背景颜色为白色 */
+    text-align: center;
+    /* 文本居中对齐 */
+    line-height: 100px;
+    /* 行高设置为100px，使得文本在垂直方向居中 */
+    font-size: 10px;
+    /* 字体大小设置为10px */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    /* 添加阴影效果，增加层次感 */
+}
+
+.产品经理 {
+    justify-content: space-around;
+    /* 内容在子元素之间平均分配 */
+    display: block;
+    /* 设置为块级元素 */
+    align-items: center;
+    /* 内容垂直居中 */
+    border: 5px solid #0000006a;
+    /* 设置灰色边框 */
+    border-radius: 50px;
+    /* 设置圆角半径为50px */
+    width: 1200px;
+    /* 设置宽度为1200px */
+    height: 550px;
+    /* 设置高度为550px */
+    margin-left: 250px;
+    /* 左侧外边距设置为250px，调整位置 */
+    margin-top: 100px;
+    /* 上外边距设置为100px */
+    background-color: #fff;
+    /* 背景颜色为白色 */
+    text-align: center;
+    /* 文本居中对齐 */
+    line-height: 100px;
+    /* 行高设置为100px，使得文本在垂直方向居中 */
+    font-size: 10px;
+    /* 字体大小设置为10px */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    /* 添加阴影效果，增加层次感 */
+}
+
+.游戏开发 {
+    justify-content: space-around;
+    /* 内容在子元素之间平均分配 */
+    display: block;
+    /* 设置为块级元素 */
+    align-items: center;
+    /* 内容垂直居中 */
+    border: 5px solid #0000006a;
+    /* 设置灰色边框 */
+    border-radius: 50px;
+    /* 设置圆角半径为50px */
+    width: 1200px;
+    /* 设置宽度为1200px */
+    height: 500px;
+    /* 设置高度为500px */
+    margin-left: 250px;
+    /* 左侧外边距设置为250px，调整位置 */
+    margin-top: 100px;
+    /* 上外边距设置为100px */
+    background-color: #fff;
+    /* 背景颜色为白色 */
+    text-align: center;
+    /* 文本居中对齐 */
+    line-height: 100px;
+    /* 行高设置为100px，使得文本在垂直方向居中 */
+    font-size: 10px;
+    /* 字体大小设置为10px */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    /* 添加阴影效果，增加层次感 */
+}
+
+.安全 {
+    justify-content: space-around;
+    /* 内容在子元素之间平均分配 */
+    display: block;
+    /* 设置为块级元素 */
+    align-items: center;
+    /* 内容垂直居中 */
+    border: 5px solid #0000006a;
+    /* 设置灰色边框 */
+    border-radius: 50px;
+    /* 设置圆角半径为50px */
+    width: 1200px;
+    /* 设置宽度为1200px */
+    height: 550px;
+    /* 设置高度为550px */
+    margin-left: 250px;
+    /* 左侧外边距设置为250px，调整位置 */
+    margin-top: 100px;
+    /* 上外边距设置为100px */
+    background-color: #fff;
+    /* 背景颜色为白色 */
+    text-align: center;
+    /* 文本居中对齐 */
+    line-height: 100px;
+    /* 行高设置为100px，使得文本在垂直方向居中 */
+    font-size: 10px;
+    /* 字体大小设置为10px */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    /* 添加阴影效果，增加层次感 */
+}
+
+/* 程序员标题样式 */
+.intro_Programmer_h1 {
+    text-align: left;
+    /* 左对齐文本 */
+    padding-top: 20px;
+    /* 设置上内边距为20px */
+    padding-left: 100px;
+    /* 设置左内边距为100px */
+    font-size: 50px;
+    /* 字体大小设置为50px */
+}
+
+.intro_PM_h1 {
+    text-align: center;
+    /* 文本居中对齐 */
+    padding-top: 0;
+    /* 设置上内边距为0 */
+    padding-right: 0;
+    /* 右内边距设置为0 */
+    font-size: 50px;
+    /* 字体大小设置为50px */
+}
+
+.intro_Game_h1 {
+    text-align: left;
+    /* 左对齐文本 */
+    padding-top: 20px;
+    /* 设置上内边距为20px */
+    padding-left: 100px;
+    /* 设置左内边距为100px */
+    font-size: 50px;
+    /* 字体大小设置为50px */
+}
+
+.intro_Security_h1 {
+    text-align: center;
+    /* 文本居中对齐 */
+    padding-top: 20px;
+    /* 设置上内边距为20px */
+    padding-right: 0;
+    /* 右内边距设置为0 */
+    font-size: 50px;
+    /* 字体大小设置为50px */
+}
+
+/* 程序员副标题样式 */
+.intro_Programmer_h2 {
+    color: rgba(0, 136, 220, 0.904);
+    /* 设置副标题字体颜色 */
+    text-shadow: 0.5px 0.5px 0.5px #909090;
+    /* 添加文字阴影效果 */
+    font-size: 35px;
+    /* 字体大小设置为35px */
+    padding-right: 480px;
+    /* 设置右内边距为480px */
+}
+
+.intro_PM_h2 {
+    color: rgba(255, 192, 203);
+    /* 设置副标题字体颜色 */
+    text-shadow: 0.5px 0.5px 0.5px #909090;
+    /* 添加文字阴影效果 */
+    font-size: 35px;
+    /* 字体大小设置为35px */
+    line-height: 1.8em;
+    /* 行高设置为1.8倍，增强可读性 */
+    padding-left: 400px;
+    /* 设置左内边距为400px */
+    text-align: left;
+    /* 文本左对齐 */
+}
+
+.intro_Game_h2 {
+    color: rgba(0, 220, 216, 0.904);
+    /* 设置副标题字体颜色 */
+    text-shadow: 0.5px 0.5px 0.5px #909090;
+    /* 添加文字阴影效果 */
+    font-size: 35px;
+    /* 字体大小设置为35px */
+    padding-right: 480px;
+    /* 设置右内边距为480px */
+}
+
+.intro_Security_h2 {
+    color: rgba(255, 192, 203);
+    /* 设置副标题字体颜色 */
+    text-shadow: 0.5px 0.5px 0.5px #909090;
+    /* 添加文字阴影效果 */
+    font-size: 35px;
+    /* 字体大小设置为35px */
+    line-height: 1.8em;
+    /* 行高设置为1.8倍，增强可读性 */
+    padding-left: 400px;
+    /* 设置左内边距为400px */
+    text-align: left;
+    /* 文本左对齐 */
+}
+
+/* 程序员段落样式 */
+.intro_Programmer_p {
+    padding: 10px;
+    /* 设置内边距为10px */
+    width: 800px;
+    /* 设置宽度为800px */
+    word-wrap: break-word;
+    /* 单词换行以适应宽度 */
+    line-height: 2.0em;
+    /* 行高设置为2.0倍，增强可读性 */
+    text-align: left;
+    /* 文本左对齐 */
+    font-size: 20px;
+    /* 字体大小设置为20px */
+    font-weight: bold;
+    /* 字体设置为粗体 */
+}
+
+.intro_PM_p {
+    padding: 0px;
+    /* 设置内边距为0px */
+    width: 1100px;
+    /* 设置宽度为1100px */
+    padding-left: 400px;
+    /* 设置左内边距为400px */
+    word-wrap: break-word;
+    /* 单词换行以适应宽度 */
+    line-height: 2.0em;
+    /* 行高设置为2.0倍，增强可读性 */
+    text-align: left;
+    /* 文本左对齐 */
+    font-size: 20px;
+    /* 字体大小设置为20px */
+    font-weight: bold;
+    /* 字体设置为粗体 */
+}
+
+.intro_Game_p {
+    padding: 10px;
+    /* 设置内边距为10px */
+    width: 800px;
+    /* 设置宽度为800px */
+    word-wrap: break-word;
+    /* 单词换行以适应宽度 */
+    line-height: 2.0em;
+    /* 行高设置为2.0倍，增强可读性 */
+    text-align: left;
+    /* 文本左对齐 */
+    font-size: 20px;
+    /* 字体大小设置为20px */
+    font-weight: bold;
+    /* 字体设置为粗体 */
+}
+
+.intro_Security_p {
+    padding: 0px;
+    /* 设置内边距为0px */
+    width: 1100px;
+    /* 设置宽度为1100px */
+    padding-top: 50px;
+    /* 设置上内边距为50px */
+    padding-left: 400px;
+    /* 设置左内边距为400px */
+    word-wrap: break-word;
+    /* 单词换行以适应宽度 */
+    line-height: 2.0em;
+    /* 行高设置为2.0倍，增强可读性 */
+    text-align: left;
+    /* 文本左对齐 */
+    font-size: 20px;
+    /* 字体大小设置为20px */
+    font-weight: bold;
+    /* 字体设置为粗体 */
+}
+
+/* 关于我们容器样式 */
+.about-us-container {
+    justify-content: space-around;
+    /* 内容在子元素之间平均分配 */
+    display: block;
+    /* 设置为块级元素 */
+    align-items: center;
+    /* 内容垂直居中 */
+    border: 7px solid #0000007e;
+    /* 设置灰色边框 */
+    border-radius: 50px;
+    /* 设置圆角半径为50px */
+    width: 1500px;
+    /* 设置宽度为1500px */
+    height: 900px;
+    /* 设置高度为900px */
+    margin-left: 110px;
+    /* 左侧外边距设置为110px，调整位置 */
+    margin-top: 100px;
+    /* 上外边距设置为100px */
+    background-color: rgba(255, 255, 220, 0.6);
+    /* 设置背景颜色为半透明黄色 */
+    text-align: center;
+    /* 文本居中对齐 */
+    line-height: 100px;
+    /* 行高设置为100px，使得文本在垂直方向居中 */
+    font-size: 10px;
+    /* 字体大小设置为10px */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    /* 添加阴影效果，增加层次感 */
+}
+
+/* 关于我们标题样式 */
+.about-us_h1 {
+    margin-left: -50px;
+    /* 设置左外边距为700px */
+    margin-top: 50px;
+    /* 向上移动820px */
+    font-size: 50px;
+    /* 字体大小设置为50px */
+}
+
+.about-us_h1 i:hover {
+    color: #4a4a4a;
+    /* 设置图标颜色 */
+    transform: scale(1.2);
+    /* 设置鼠标悬停时元素的放大倍数 */
+}
+
+/* 装饰图片样式 */
+.decoration_about-1 {
+    position: relative;
+    /* 相对定位，保持在正常文档流中 */
+    transform: scale(-1);
+    /* 水平翻转元素 */
+    top: 705px;
+    /* 上移720px */
+    left: -720px;
+    /* 向左移动50px */
+    width: 10%;
+    /* 设置宽度为10% */
+    height: auto;
+    /* 高度自动，保持纵横比 */
+}
+
+.decoration_about-2 {
+    position: relative;
+    /* 相对定位，保持在正常文档流中 */
+    top: -280px;
+    /* 上移220px */
+    left: 720px;
+    /* 向左移动1480px */
+    width: 10%;
+    /* 设置宽度为10% */
+    height: auto;
+    /* 高度自动，保持纵横比 */
+}
+
+.decoration_about-3 {
+    position: relative;
+    /* 相对定位，保持在正常文档流中 */
+    transform: scaleX(-1);
+    /* 逆时针翻转元素 */
+    top: -380px;
+    /* 上移277px */
+    left: -720px;
+    /* 向左移动50px */
+    width: 10%;
+    /* 设置宽度为10% */
+    height: auto;
+    /* 高度自动，保持纵横比 */
+}
+
+.decoration_about-4 {
+    position: relative;
+    /* 相对定位，保持在正常文档流中 */
+    transform: scaleY(-1);
+    /* 逆时针翻转元素 */
+    top: 405px;
+    /* 上移548px */
+    left: 725px;
+    /* 向左移动1480px */
+    width: 10%;
+    /* 设置宽度为10% */
+    height: auto;
+    /* 高度自动，保持纵横比 */
+}
+
+.decoration_about-5 {
+    position: relative;
+    /* 相对定位，保持在正常文档流中 */
+    top: 150px;
+    /* 上移280px */
+    left: 500px;
+    /* 向左移动1300px */
+    width: 10%;
+    /* 设置宽度为10% */
+    height: auto;
+    /* 高度自动，保持纵横比 */
+    z-index: 10;
+    /* 设置层级，确保在其他元素之上 */
+}
+
+/* 关于我们内容框样式 */
+.about-us-content-speech {
+    border: 6px solid #000000;
+    /* 设置边框 */
+    border-radius: 20px;
+    /* 设置圆角半径为20px */
+    margin-left: 220px;
+    /* 左侧外边距 */
+    margin-top: -580px;
+    /* 上外边距 */
+    font-size: 20px;
+    /* 字体大小 */
+    font-weight: bold;
+    /* 粗体 */
+    height: 650px;
+    /* 设置高度为650px */
+    width: 300px;
+    /* 设置宽度为300px */
+}
+
+/* 关于我们内容框样式 */
+.about-us-content-diversity {
+    border: 6px solid #000000;
+    /* 设置边框 */
+    border-radius: 20px;
+    /* 设置圆角半径为20px */
+    margin-left: 570px;
+    /* 左侧外边距 */
+    margin-top: -650px;
+    /* 上外边距 */
+    font-size: 20px;
+    /* 字体大小 */
+    font-weight: bold;
+    /* 粗体 */
+    height: 650px;
+    /* 设置高度为650px */
+    width: 300px;
+    /* 设置宽度为300px */
+}
+
+.about-us-content-time {
+    border: 6px solid #000000;
+    /* 设置边框 */
+    border-radius: 20px;
+    /* 设置圆角半径为20px */
+    margin-left: 920px;
+    /* 左侧外边距 */
+    margin-top: -650px;
+    /* 上外边距 */
+    font-size: 20px;
+    /* 字体大小 */
+    font-weight: bold;
+    /* 粗体 */
+    height: 650px;
+    /* 设置高度为650px */
+    width: 300px;
+    /* 设置宽度为300px */
+}
+
+/* 关于我们内容文本样式 */
+.about-us-content-speech-text {
+    padding-top: 0px;
+    /* 设置上内边距 */
+    margin: 20px;
+    /* 外边距 */
+    text-align: justify;
+    /* 文本两端对齐 */
+    font-size: 25px;
+    /* 字体大小 */
+    line-height: 2.5em;
+}
+
+.about-us-content-diversity-text {
+    padding-top: 0px;
+    /* 设置上内边距 */
+    margin: 20px;
+    /* 外边距 */
+    text-align: justify;
+    /* 文本两端对齐 */
+    font-size: 25px;
+    /* 字体大小 */
+    line-height: 2.5em;
+
+}
+
+.about-us-content-time-text {
+    margin-top: 5px;
+    /* 外边距 */
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: justify;
+    /* 文本两端对齐 */
+    font-size: 25px;
+    /* 字体大小 */
+    line-height: 2.5em;
+
+}
+
+/* 关于我们内容图像样式 */
+.about-us-content-img-speech {
+    position: relative;
+    /* 相对定位，保持在正常文档流中 */
+    width: 150px;
+    /* 设置宽度为240px */
+    padding-left: -5px;
+    /* 左内边距设置为45px */
+    padding-top: 20px;
+    /* 上内边距设置为20px */
+}
+
+.about-us-content-img-diversity {
+    position: relative;
+    /* 相对定位，保持在正常文档流中 */
+    width: 150px;
+    /* 设置宽度为240px */
+    padding-left: -5px;
+    /* 左内边距设置为45px */
+    padding-top: 20px;
+    /* 上内边距设置为20px */
+}
+
+.about-us-content-img-time {
+    position: relative;
+    /* 相对定位，保持在正常文档流中 */
+    width: 150px;
+    /* 设置宽度为240px */
+    padding-left: -5px;
+    /* 左内边距设置为45px */
+    padding-top: 20px;
+    /* 上内边距设置为20px */
+}
+
+/* 联系我们容器样式 */
+.contact-us-container {
+    justify-content: space-around;
+    /* 内容在子元素之间平均分配 */
+    display: block;
+    /* 设置为块级元素 */
+    align-items: center;
+    /* 内容垂直居中 */
+    border: 7px solid rgb(14, 122, 129);
+    /* 设置边框 */
+    border-radius: 50px;
+    /* 设置圆角半径为50px */
+    width: 1500px;
+    /* 设置宽度为1500px */
+    height: 900px;
+    /* 设置高度为900px */
+    margin-left: 110px;
+    /* 左侧外边距设置为110px，调整位置 */
+    margin-top: 100px;
+    /* 上外边距设置为100px */
+    background-color: rgba(255, 255, 255, 0.6);
+    /* 设置背景颜色为半透明黄色 */
+    text-align: center;
+    /* 文本居中对齐 */
+    line-height: 100px;
+    /* 行高设置为100px，使得文本在垂直方向居中 */
+    font-size: 10px;
+    /* 字体大小设置为10px */
+    box-shadow: 1px -1px 10px -1px rgb(60, 180, 190);
+    /* 添加阴影效果，增加层次感 */
+}
+
+.contact-us_h1 {
+    color: rgb(14, 122, 129);
+    margin-top: -920px;
+    /* 向上移动820px */
+    font-size: 55px;
+    /* 字体大小设置为50px */
+    font-weight: 400;
+}
+
+.contact-us_h1 i:hover {
+    color: #4a4a4a;
+    /* 设置图标颜色 */
+    transform: scale(1.2);
+    /* 设置鼠标悬停时元素的放大倍数 */
+}
+
+.decoration_contact-1 {
+    position: relative;
+    /* 相对定位 */
+    height: 500px;
+    /* 设置高度为500px */
+    width: auto;
+    /* 设置宽度为自适应 */
+    margin-left: -1170px;
+    /* 向左移动1170px */
+    margin-top: -55px;
+    /* 向上移动200px */
+}
+
+.decoration_contact-2 {
+    position: relative;
+    /* 相对定位 */
+    height: 800px;
+    /* 设置高度为500px */
+    width: auto;
+    /* 设置宽度为自适应 */
+    margin-left: 1300px;
+    margin-top: -510px;
+}
+
+.decoration_contact-3 {
+    position: absolute;
+    margin-top: -780px;
+    margin-left: -300px;
+    height: 50px;
+    width: auto;
+}
+
+.decoration_contact-4 {
+    height: 70px;
+    width: auto;
+    margin-left: -1450px;
+    margin-top: 20px;
+}
+
+.decoration_contact-5 {
+    position: relative;
+    display: block;
+    height: 350px;
+    width: auto;
+    margin-left: 750px;
+    margin-top: -360px;
+}
+
+.contact-us_p1 {
+    position: relative;
+    text-align: left;
+    font-size: 28px;
+    line-height: 3.0em;
+    padding-left: 400px;
+    font-weight: 550;
+}
+
+.contact-us_p2 {
+    position: relative;
+    color: rgb(150, 150, 150);
+    text-align: left;
+    width: 1100px;
+    font-size: 20px;
+    font-weight: 550;
+    line-height: 1.5em;
+    padding-left: 400px;
+    padding-top: 20px;
+}
+
+.contact-methods {
+    position: relative;
+    /* 使用相对定位 */
+    display: flex;
+    /* 使用弹性布局 */
+    margin-top: -80px;
+    /* 设置顶部外间距 */
+    justify-content: center;
+    /* 设置元素在主轴上居中对齐 */
+    align-items: center;
+    /* 设置元素在交叉轴上居中对齐 */
+    gap: 20px;
+    /* 设置元素间距 */
+    transform: translateX(-30px);
+    /* 设置元素沿X轴移动的距离 */
+    z-index: 10;
+    /* 设置堆叠层级。堆叠层级越大,图层越靠上 */
+}
+
+.contact-link {
+    margin: 160px;
+    /* 设置容器在父容器内的上下外边距和左右外边距。“auto”表示居中 */
+    padding: 0px 25px;
+    /* 设置容器内边距。*/
+    background-color: rgb(14, 122, 129);
+    /* 设置背景颜色 */
+    color: #fff;
+    /* 设置字体颜色 */
+    font-weight: 550;
+    /* 设置字体粗细 */
+    font-size: 20px;
+    /* 设置字体大小 */
+    border-radius: 15px;
+    /* 设置圆角大小 */
+    transition: background-color 0.9s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    /* 为background-color,transform,box-shadow属性设置平滑的过渡效果和持续时间 */
+}
+
+.contact-link:hover {
+    background-color: rgb(14, 122, 129);
+    /* 设置背景颜色 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* 设置阴影(X轴偏移量,Y轴偏移量,模糊程度,颜色) */
+    transform: scale(1.05);
+    /* 设置鼠标悬停时元素的放大倍数 */
+}
+
+
+.contact-popup {
+    position: fixed;
+    /* 使用固定定位 */
+    top: 25%;
+    left: 50%;
+    width: 500px;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /* 设置文本或行内元素在父容器内水平居中 */
+    background-color: rgba(255, 255, 255);
+    /* 设置背景颜色 */
+    border-radius: 15px;
+    /* 设置圆角大小 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* 设置阴影(X轴偏移量,Y轴偏移量,模糊程度,颜色) */
+    z-index: 9999;
+}
+
+
+.hidden {
+    display: none;
+    /* 设置元素完全隐藏 */
+}
+
+.popup-content p {
+    margin-bottom: 20px;
+    /* 设置底部外间距 */
+    font-size: 16px;
+    /* 设置字体大小 */
+    color: #333;
+    /* 设置字体颜色 */
+}
+
+.close-button {
+    padding: 8px 16px;
+    /* 设置容器内边距*/
+    border: none;
+    /* 设置边框(粗细、样式、颜色) */
+    background-color: #a4a5a5;
+    /* 设置背景颜色 */
+    border-radius: 5px;
+    /* 设置圆角大小 */
+    color: white;
+    /* 设置字体颜色 */
+    cursor: pointer;
+    /* 当鼠标指针悬停其变为手形 */
+}
+
+#contact-box,
+.close-button:hover {
+    background-color: #535151;
+    /* 设置背景颜色 */
+}
+
+
+.qa-container {
+    display: flex;
+    /* 使用弹性布局 */
+    flex-direction: column;
+    /* 使用纵向布局 */
+    justify-content: center;
+    /* 设置元素在主轴上居中对齐 */
+    align-items: center;
+    /* 设置元素在交叉轴上居中对齐 */
+    background-image: url('image/background_QA.png');
+    /* 引入背景图片 */
+    background-size: cover;
+    /* 设置背景图片完全覆盖容器的背景区域 */
+    border-radius: 25px;
+    /* 设置圆角大小 */
+    border: 7px solid rgb(65, 170, 255);
+    /* 设置边框 */
+    border-radius: 10px;
+    /* 设置圆角半径为10px */
+    width: 1600px;
+    /* 设置宽度为1600px */
+    height: auto;
+    /* 设置高度为自适应 */
+    margin-left: 60px;
+    /* 左侧外边距设置450px，调整位置 */
+    margin-top: 100px;
+    /* 上外边距设置为100px */
+    background-color: rgba(255, 255, 255, 0.6);
+    /* 设置背景颜色为半透明黄色 */
+    text-align: center;
+    /* 文本居中对齐 */
+    line-height: 100px;
+    /* 行高设置为100px，使得文本在垂直方向居中 */
+    font-size: 10px;
+    /* 字体大小设置为10px */
+    box-shadow: 1px -1px 10px -1px rgb(0, 149, 255);
+    /* 添加阴影效果，增加层次感 */
+}
+
+.qa_h1 {
+    padding-top: 50px;
+    padding-bottom: -50px;
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.qa_h1 i:hover {
+    color: #4a4a4a;
+    /* 设置图标颜色 */
+    transform: scale(1.2);
+    /* 设置鼠标悬停时元素的放大倍数 */
+}
+
+.popup-box {
+    position: absolute;
+    /* 绝对定位，相对于.text-container定位 */
+    bottom: 100%;
+    /* 定位在点击文字的下方 */
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* 白色半透明背景 */
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    /* 可根据需要调整宽度 */
+    display: none;
+    /* 初始隐藏 */
+}
+
+/* 问答部分样式 */
+
+.qa_ul {
+    list-style-type: none;
+    /* 去掉列表前的点 */
+    padding: 0;
+    /* 去掉默认内边距 */
+    margin-bottom: 15px;
+    /* 设置底部外间距 */
+}
+
+.qa_list {
+    width: 90%;
+    /* 设置宽度。“px”：设置元素宽度固定大小;“%”：设置元素宽度相对于父容器宽度的百分比 */
+}
+
+.qa_a {
+    display: block;
+    /* 设置其为块级元素 */
+    padding: 10px 0;
+    /* 设置容器内边距。*/
+    font-size: 20px;
+    /* 设置字体大小 */
+    color: black;
+    /* 设置字体颜色 */
+    cursor: pointer;
+    /* 当鼠标指针悬停在需要点击的元素时,设置其变为手形 */
+    transition: transform 0.4s, color 0.4s;
+    /* 为transform和color属性设置平滑的过渡效果和持续时间 */
+}
+
+.qa_a:hover {
+    color: rgb(104, 104, 104);
+    /* 设置字体颜色 */
+    transform: scale(1.05);
+    /* 设置鼠标悬停时元素的放大倍数 */
+}
+
+.qa_ul li {
+    margin-bottom: 15px;
+    /* 设置底部外间距 */
+}
+
+.answer {
+    display: none;
+    /* 设置元素完全隐藏 */
+    margin-top: 10px;
+    /* 设置顶部外间距 */
+    line-height: 1.5;
+    /* 设置行高 */
+    padding: 15px;
+    /* 设置容器内边距。1个值：上下左右,2个值：上下、左右,4个值：上、右、下、左 */
+    background-color: rgb(119, 182, 255);
+    /* 设置背景颜色 */
+    font-size: 18px;
+    /* 设置字体大小 */
+    color: white;
+    /* 设置字体颜色 */
+    border-radius: 10px;
+    /* 设置圆角大小 */
+    box-shadow: 0 4px 8px rgb(65, 170, 255);
+    /* 设置阴影(X轴偏移量,Y轴偏移量,模糊程度,颜色) */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* 为background-color和transform属性设置平滑的过渡效果和持续时间 */
+}
+
+.answer:hover {
+    background-color: rgb(65, 170, 255, 1);
+    /* 设置背景颜色 */
+    transform: scale(1.05);
+    /* 设置鼠标悬停时元素的放大倍数 */
+}
+
+#backToTopButton {
+    display: inline-block;
+    /* 默认显示箭头按钮 */
+    position: fixed;
+    bottom: 20px;
+    /* 固定在页面底部 */
+    right: 20px;
+    /* 固定在页面底部右侧 */
+    padding: 10px;
+    /* 可以适当调整内边距，让按钮看起来更协调 */
+    width: 45px;
+    /* 设置按钮宽度 */
+    height: 40px;
+    /* 设置按钮高度 */
+    border: 2px solid #000000;
+    /* 设置边框 */
+    background-color: rgb(225, 240, 255);
+    color: white;
+    border-radius: 40%;
+    /* 将边框圆角设置为40% */
+    cursor: pointer;
+    /* 鼠标悬停时显示手型 */
+    justify-content: center;
+    /* 水平居中内容 */
+    align-items: center;
+    /* 垂直居中内容 */
+}
+
+#backToTopButton i {
+    background-color: #000000;
+    font-size: 13px;
+    width: 15px;
+    height: 15px;
+    /* 设置按钮内的图标大小 */
+    border-radius: 100%;
+    
+}
+
+
+/* 图标样式保持不变 */
+.rocket {
+    background-color: #000000;
+    font-size: 13px;
+    width: 15px;
+    height: 15px;/* 设置按钮内的图标大小 */
+    border-radius: 100%;
+    visibility: hidden;/* 隐藏 */
+}
+
+.rocket:hover {
+    visibility: visible;/* 显示 */
+}
+
+.footer {
+    width: 100%;
+    background-color: rgb(245, 240, 245);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer #footer1 {
+    margin-top: 10px;
+    padding-top: 5px;
+    border: 1px gray solid;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: transparent;
+    font-size: 15px;
+    width: 80%;
+    text-align: center;
+}
+
+.footer #footer2 {
+    font-size: 13px;
+    width: 90%;
+    text-align: center;
+    margin-bottom: 5px;
+    padding-bottom: 15px;
+    border: 1px gray solid;
+    border-left: transparent;
+    border-right: transparent;
+    border-top: transparent;
+}
+
+/* 当屏幕宽度小于等于768px时，应用以下样式 */
+@media (max-width: 768px) {
+
+    /* 导航栏样式调整 */
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav a {
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    /* 首页图片容器样式调整 */
+    .首页-container {
+        height: auto;
+    }
+
+    .image-top {
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+    }
+
+    .image-bottom {
+        width: 100%;
+    }
+
+    /* 介绍部分容器样式调整 */
+    .开发程序猿,
+    .产品经理,
+    .游戏开发 {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        line-height: normal;
+        padding: 20px;
+    }
+
+    /* 关于我们容器样式调整 */
+    .about-us-container {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        line-height: normal;
+        padding: 20px;
+    }
+
+    /* 联系我们容器样式调整 */
+    .contact-us-container {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        line-height: normal;
+        padding: 20px;
+    }
+
+    /* 问答部分容器样式调整 */
+    .qa-container {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        line-height: normal;
+        padding: 20px;
+    }
+}
