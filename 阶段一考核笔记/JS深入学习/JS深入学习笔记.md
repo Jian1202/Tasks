@@ -32,9 +32,7 @@ JavaScript 可以通过 DOM（文档对象模型）操作 HTML 元素。
 
 </html>
 ```
-![image-20250331193543734](./assets/image-20250331193543734.png)
-
----
+![image-20250331193543734](./assets/image-20250331193543734-1746967245336-2.png)
 
 #### document.getElementsByClassName(className)
 
@@ -63,7 +61,7 @@ JavaScript 可以通过 DOM（文档对象模型）操作 HTML 元素。
 
 </html>
 ```
-![image-20250331193608531](./assets/image-20250331193608531.png)
+![image-20250331193608531](./../assets/image-20250331193608531.png)
 
 ---
 
@@ -95,7 +93,7 @@ JavaScript 可以通过 DOM（文档对象模型）操作 HTML 元素。
 
 </html>
 ```
-![image-20250331193649918](./assets/image-20250331193649918.png)
+![image-20250331193649918](./../assets/image-20250331193649918.png)
 #### document.querySelectorAll(selector)
 
 使用 CSS 选择器获取**所有匹配的元素集合**。
@@ -127,7 +125,7 @@ JavaScript 可以通过 DOM（文档对象模型）操作 HTML 元素。
 </html>
 ```
 
-![image-20250331193713978](./assets/image-20250331193713978.png)
+![image-20250331193713978](./../assets/image-20250331193713978.png)
 
 
 ### 2. 事件处理
@@ -163,7 +161,7 @@ JavaScript 可以处理 HTML 元素的==事件==，如**点击、鼠标悬停、
 
 在这个例子中，当按钮被点击时，`showMessage` 函数会被调用，弹出提示框。
 
-![image-20250331193418067](./assets/image-20250331193418067.png)
+![image-20250331193418067](./../assets/image-20250331193418067.png)
 
 #### 2. 通过 DOM 获取元素添加
 
@@ -190,7 +188,7 @@ JavaScript 可以处理 HTML 元素的==事件==，如**点击、鼠标悬停、
 
 这里通过 `document.getElementById` 获取按钮元素，接着将其 `onclick` 属性设为一个**匿名函数**，点击按钮时会弹出提示框。
 
-![image-20250331193446328](./assets/image-20250331193446328.png)
+![image-20250331193446328](./../assets/image-20250331193446328.png)
 
 #### 3. 使用事件监听方式添加
 
@@ -218,7 +216,7 @@ JavaScript 可以处理 HTML 元素的==事件==，如**点击、鼠标悬停、
 
 在这个示例中，通过 `addEventListener` 方法为按钮添加了一个点击事件监听器，点击按钮时会弹出提示框。`addEventListener` 方法的第三个参数 `false` 表示使用冒泡阶段。
 
-![image-20250331193513771](./assets/image-20250331193513771.png)
+![image-20250331193513771](./../assets/image-20250331193513771.png)
 
 **==可以看到上述三种情况html代码呈现情况是一致的==，但本质上还是有些区别的：**
 
@@ -262,9 +260,9 @@ JavaScript 可以处理 HTML 元素的==事件==，如**点击、鼠标悬停、
 
 此例中，当鼠标悬停在按钮上时，`changeColor` 函数会被调用，按钮背景颜色变为红色。
 
-![image-20250331194144133](./assets/image-20250331194144133.png)
+![image-20250331194144133](./../assets/image-20250331194144133.png)
 
-![image-20250331194343768](./assets/image-20250331194343768.png)
+![image-20250331194343768](./../assets/image-20250331194343768.png)
 
 #### 2. 使用 JavaScript 的 addEventListener 方法
 
@@ -292,9 +290,9 @@ JavaScript 可以处理 HTML 元素的==事件==，如**点击、鼠标悬停、
 
 这里通过 `addEventListener` 方法为按钮添加了鼠标悬停事件监听器，鼠标悬停时按钮背景颜色变为绿色。
 
-![image-20250331195550582](./assets/image-20250331195550582.png)
+![image-20250331195550582](./../assets/image-20250331195550582.png)
 
-![image-20250331195655639](./assets/image-20250331195655639.png)
+![image-20250331195655639](./../assets/image-20250331195655639.png)
 
 #### *3. 使用 jQuer[^4] 的 hover 方法
 
