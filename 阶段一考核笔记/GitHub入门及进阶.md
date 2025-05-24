@@ -145,6 +145,7 @@ git reset --hard HEAD~1  # 彻底丢弃提交和修改
 ---
 
 ## **五、学习资源**
-1. 官方文档：[GitHub Docs](https://docs.github.com/)
+1. GitHub官方文档：[GitHub Docs](https://docs.github.com/)
 2. Git教程：[Pro Git Book](https://git-scm.com/book/)
-3. 交互式练习：[Learn Git Branching](https://learngitbranching.js.org/)
+3. Git交互式练习：[Learn Git Branching](https://learngitbranching.js.org/)
+

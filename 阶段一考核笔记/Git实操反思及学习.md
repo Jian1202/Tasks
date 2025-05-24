@@ -194,7 +194,7 @@ main -> commit A (SHA-1: a1b2c3)
 
   找到旧分支的哈希值后，用
 
-  ```
+  ```bash
   git branch -f main <hash>
   ```
 

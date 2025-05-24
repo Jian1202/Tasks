@@ -1,6 +1,6 @@
 # **HTML程序基本框架：**
 
-
+## 一、代码展示HTML标签大致框架
 
 ```html
 <!DOCTYPE html> <!-- 声明文档类型为 HTML5 -->
@@ -71,6 +71,7 @@
 </body>
 </html>
 ```
+## 二、图形展示HTML标签代码框架
 
 ```mermaid
 graph TD
