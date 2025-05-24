@@ -48,7 +48,7 @@
 
 ##### demo网页：
 
-[Student Log | Jian](https://jian1202.github.io/Tasks/个人网页demo)
+[Student Log | Jian](https://jian1202.github.io/Tasks/阶段一考核笔记/个人网页demo)
 
 ---
 
@@ -62,7 +62,7 @@
 
 ##### 复刻网页：
 
-[加入Geek 吧！！！](https://jian1202.github.io/Tasks/复刻网站)
+[加入Geek 吧！！！](https://jian1202.github.io/Tasks/阶段一考核笔记/复刻网站)
 
 #### 阶段四实践后思考产出笔记集：
 
