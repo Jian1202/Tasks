@@ -5,7 +5,7 @@
 ### 考核阶段一、二
 
 #### 入门学习产出笔记：
-[Markdown常用语法学习练习](/Markdown常用语法学习练习.md)
+[Markdown常用语法学习练习](阶段一考核笔记/Markdown常用语法学习练习.md)
 
 [hello.md](hello.md)
 
