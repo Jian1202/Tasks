@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>留言板</title>
+</head>
+<body>
+  <h2>留言板</h2>
+  <input type="text" id="msgInput" placeholder="输入留言..." />
+  <button id="submitBtn">提交</button>
+  <ul id="msgList"></ul>
+
+  <script>
+    "use strict"; // 开启严格模式
+
+    /*
+    创建一个闭包函数，用于生成唯一的递增ID。
+    每次调用返回的函数，ID都会加1。
+    @returns {function(): number} 返回一个函数，该函数每次调用时都会返回一个递增的ID。
+    */
+    function createCounter() {
+      let count = 0; // 私有变量，用于存储当前ID值
+      return function () {
+        return ++count; // 返回递增后的ID
+      };
+    }
+    // 获取一个ID生成器函数
+    const getMessageId = createCounter();
+
+    // 获取DOM元素
+    const input = document.getElementById("msgInput"); // 留言输入框
+    const btn = document.getElementById("submitBtn"); // 提交按钮
+    const ul = document.getElementById("msgList");     // 留言列表容器（无序列表）
+
+    // 为提交按钮绑定点击事件监听器
+    btn.addEventListener("click", function () {
+      try {
+        // 获取输入框内容，并去除首尾空格
+        const content = input.value.trim();
+        // 如果内容为空，抛出错误
+        if (!content) throw new Error("留言不能为空！");
+        
+        // 创建留言对象
+        const msgObj = {
+          id: getMessageId(), // 调用ID生成器获取唯一ID
+          text: content,      // 留言文本内容
+          time: new Date().toLocaleTimeString() // 获取当前时间（本地时间格式）
+        };
+
+        // 将留言对象转换为JSON字符串。
+        // 这步在这里主要是演示 JSON.stringify 和 JSON.parse 的用法，
+        // 在实际应用中，如果只是在客户端展示，通常不需要这一步。
+        const jsonStr = JSON.stringify(msgObj); 
+        // 解析JSON字符串为留言对象。
+        const parsedMsg = JSON.parse(jsonStr); 
+
+        // 创建新的列表项（li元素）
+        const li = document.createElement("li");
+        // 设置列表项的文本内容，包含ID、留言文本和时间
+        li.textContent = `[${parsedMsg.id}] ${parsedMsg.text} —— ${parsedMsg.time}`;
+        // 将新创建的列表项添加到留言列表中
+        ul.appendChild(li);
+
+        input.value = ""; // 提交后清空输入框内容
+      } catch (err) {
+        // 捕获可能发生的错误，并弹窗显示错误信息
+        alert("出错了：" + err.message);
+      }
+    });
+  </script>
+</body>
+</html>

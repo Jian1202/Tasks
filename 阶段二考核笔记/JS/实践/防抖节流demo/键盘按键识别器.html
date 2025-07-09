@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>我是谁？键盘按键识别器</title>
+  <style>
+    body {
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f3f3f3;
+    }
+    .box {
+      background: white;
+      padding: 40px 80px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.1);
+      font-size: 24px;
+      transform: scale(2);
+      transform-origin: center;
+    }
+    .key {
+      font-size: 64px;
+      color: #3498db;
+      margin-bottom: 20px;
+    }
+    .small {
+      font-size: 24px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box" id="output">
+    <div class="key">按下任意键</div>
+    <div class="small">等你来发现你的键盘“身份”</div>
+  </div>
+
+  <script>
+    "use strict";
+
+    /*
+    防抖函数：限制一个函数在指定时间内只能执行一次。
+    适用于高频触发的事件，如输入、窗口调整大小。
+    @param {Function} fn - 需要防抖的函数。
+    @param {number} delay - 延迟时间（毫秒）。
+    */
+    function debounce(fn, delay) {
+      let timer;
+      return function (...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn.apply(this, args), delay);
+      };
+    }
+
+    /*
+    根据按键值判断按键类型。
+    @param {string} key - 键盘事件对象的 key 属性值。
+    @returns {string} 返回按键的类型描述。
+    */
+    function getKeyType(key) {
+      if (/^[a-zA-Z]$/.test(key)) return "英文字母";
+      if (/^[0-9]$/.test(key)) return "数字";
+      if (/^\s$/.test(key)) return "空格";
+      if (["Enter", "Shift", "Control", "Alt", "Escape"].includes(key)) return "控制键";
+      return "其他符号/功能键";
+    }
+
+    const output = document.getElementById("output");
+
+    /*
+    显示按键信息的函数。
+    @param {KeyboardEvent} e - 键盘事件对象。
+    */
+    function displayKeyInfo(e) {
+      const key = e.key;
+      const code = e.keyCode; // 注意：keyCode 已废弃，推荐使用 e.code 或 e.key
+      const type = getKeyType(key);
+      const time = new Date().toLocaleTimeString();
+
+      output.innerHTML = `
+        <div class="key">你按下了：${key === ' ' ? 'Space' : key}</div>
+        <div class="small">键值代码：${code}</div>
+        <div class="small">类型：${type}</div>
+        <div class="small">时间：${time}</div>
+      `;
+
+      output.style.borderColor = "#2ecc71";
+    }
+
+    // 监听键盘按下事件，并使用防抖处理，避免频繁更新
+    window.addEventListener("keydown", debounce(displayKeyInfo, 300));
+  </script>
+</body>
+</html>
