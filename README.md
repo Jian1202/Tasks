@@ -106,9 +106,9 @@
 
 #### 产出实践demo：
 
-[留言板](https://jian1202.github.io/Tasks/阶段二考核笔记/JS/纯JS小网站)
+[留言板](https://jian1202.github.io/Tasks/阶段二考核笔记/JS/纯JS小网站/留言板.html)
 
-[键盘按键识别器](https://jian1202.github.io/Tasks/阶段二考核笔记/JS/防抖节流demo)
+[键盘按键识别器](https://jian1202.github.io/Tasks/阶段二考核笔记/JS/防抖节流demo/键盘按键识别器.html)
 
 ### 考核阶段二
 
