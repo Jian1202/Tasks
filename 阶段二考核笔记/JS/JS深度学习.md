@@ -547,7 +547,18 @@ counter2(); // 输出: 1
 ## 六、DOM API 
 
 - **定义 (Document Object Model)**：一个跨平台和语言无关的接口，它允许程序和脚本==动态地访问和更新文档的内容、结构和样式==。DOM 将 HTML 或 XML 文档表示为一个由节点和对象组成的**树状结构**。
+
+| 节点类型 | 示例标签   |
+| -------- | ---------- |
+| 文档节点 | `document` |
+| 元素节点 | `div`, `p` |
+| 文本节点 | 文本内容   |
+| 注释节点 | `<!-- -->` |
+
 - **常用 API**：
+
+  > **API（应用程序接口）**就是一组“别人写好的函数或方法”，可以用它们完成特定任务，而不用关心底层实现。
+
   - **选择元素**：
     - `document.getElementById('id')`
     - `document.getElementsByClassName('class')` (返回 HTMLCollection)
